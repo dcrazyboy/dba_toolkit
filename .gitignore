@@ -1,0 +1,36 @@
+# Fichiers temporaires
+*.swp
+*.tmp
+*.log
+*.bak
+
+# Fichiers de configuration locaux
+*.local
+.env
+config.local.sh
+
+# Cache ShellCheck
+.shellcheck
+
+# Fichiers générés par PostgreSQL
+*.pid
+*.lock
+postmaster.pid
+postmaster.opts
+
+# Fichiers de sauvegarde
+*.dump
+*.backup
+
+# Fichiers binaires
+*.bin
+*.exe
+
+# Fichiers de cache
+__pycache__/
+*.pyc
+
+# Fichiers de logs
+pg_log/
+log/
+
