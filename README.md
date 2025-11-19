@@ -17,18 +17,18 @@
 ---
 
 ## 📋 Table des Matières
-- [PostgreSQL DBA Toolkit 🐘 (En Développement)](#postgresql-dba-toolkit--en-développement)
-	- [⚠️ Statut Actuel](#️-statut-actuel)
-	- [📋 Table des Matières](#-table-des-matières)
-	- [📌 Prérequis](#-prérequis)
-	- [🚀 Installation](#-installation)
-	- [📂 Structure du Dépôt](#-structure-du-dépôt)
-	- [🛠 Utilisation](#-utilisation)
-	- [🤝 Contribuer](#-contribuer)
-	- [📜 Licence](#-licence)
-	- [💡 Exemples d’Utilisation](#-exemples-dutilisation)
-	- [⚠️ Avertissements](#️-avertissements)
-	- [📬 Contact](#-contact)
+1. [PostgreSQL DBA Toolkit 🐘 (En Développement)](#postgresql-dba-toolkit--en-développement)
+   1. [⚠️ Statut Actuel](#️-statut-actuel)
+   1. [📋 Table des Matières](#-table-des-matières)
+   1. [📌 Prérequis](#-prérequis)
+   1. [🚀 Installation](#-installation)
+   1. [📂 Structure du Dépôt](#-structure-du-dépôt)
+   1. [🛠 Utilisation](#-utilisation)
+   1. [🤝 Contribuer](#-contribuer)
+   1. [📜 Licence](#-licence)
+   1. [💡 Exemples d’Utilisation](#-exemples-dutilisation)
+   1. [⚠️ Avertissements](#️-avertissements)
+   1. [📬 Contact](#-contact)
 
 ---
 
@@ -69,37 +69,26 @@ cp config/env.example config/.env
 
 ## 📂 Structure du Dépôt
 ```
-postgres_dba_toolkit/
+dba_toolkit/
 │
-├── scripts/                  # Scripts utilitaires
-│   ├── backup/               # Sauvegardes
-│   │   ├── full_backup.sh     # Sauvegarde complète
-│   │   └── incremental_backup.sh
-│   ├── monitoring/            # Surveillance
-│   │   ├── check_db_status.sh
-│   │   └── query_performance.sh
-│   └── maintenance/           # Maintenance
-│       ├── vacuum_analyze.sh
-│       └── reindex_tables.sh
+├── tools/
+│   └── vscodium/              # Configuration VSCodium (portable)
+│       ├── docs/
+│       ├── config/
+│       └── scripts/
 │
-├── config/                   # Fichiers de configuration
-│   ├── env.example            # Exemple de variables d’environnement
-│   └── pg_hba.conf            # Exemple de configuration HBA
+├── postgres/
+│   ├── scripts/
+│   │   ├── backup/
+│   │   ├── monitoring/
+│   │   └── maintenance/
+│   ├── config/
+│   ├── docs/
+│   └── sql/
 │
-├── docs/                     # Documentation
-│   ├── backup_guide.md        # Guide des sauvegardes
-│   ├── monitoring_guide.md    # Guide du monitoring
-│   └── maintenance_guide.md   # Guide de maintenance
-│
-├── sql/                      # Requêtes SQL utiles
-│   ├── queries/               # Requêtes de monitoring
-│   │   ├── slow_queries.sql
-│   │   └── table_sizes.sql
-│   └── functions/             # Fonctions PostgreSQL
-│
-├── .gitignore                 # Fichiers à ignorer
-├── README.md                  # Ce fichier
-└── LICENSE                    # Licence (MIT)
+├── .gitignore
+├── README.md                  # Description globale du dépôt
+└── LICENSE
 ```
 
 ## 🛠 Utilisation
