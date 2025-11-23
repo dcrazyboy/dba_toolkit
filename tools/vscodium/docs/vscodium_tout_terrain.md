@@ -34,6 +34,8 @@
       1. [A propos des extensions](#a-propos-des-extensions)
       1. [A propos des emoji](#a-propos-des-emoji)
          1. [Comment les Utiliser ?](#comment-les-utiliser-)
+      1. [A propos de project manager](#a-propos-de-project-manager)
+         1. [Comment bascule d'un projet à un autre ?](#comment-bascule-dun-projet-à-un-autre-)
    1. [:pray: Remerciement](#pray-remerciement)
 
 ## But
@@ -79,9 +81,7 @@ sudo zypper ar -f https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/rpms/ vsco
 sudo zypper install codium
 ```
 
-```bash
 
-```
 ## L'espace de travail
 
 Choix : Installation de l'espace de travail sur disque externe ou clef usb (petits projets ou pour demo/partage)

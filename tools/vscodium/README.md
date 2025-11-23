@@ -1,41 +1,41 @@
-#  Table des matières
+# :warning: Avertissement <!-- omit in toc -->
+Comme tout ici, j'ai travaillé avec Le Matou :cat: (AKA : Lechat - Mistral AI) et bien sur ce fut épique, partir d'une :thinking: et se faire aider par un :cat2: pour arrive a une :yarn:, c'est sportif et ne se fait pas en 2h comme beaucoup de DEV ou de créateurs de SAAS, que je croise, le pensent ou le disent
 
-1. [Table des matières](#table-des-matières)
-   1. [:thinking: L'idée](#thinking-lidée)
-   1. [:wrench: Convention de nomage](#wrench-convention-de-nomage)
-   1. [:framed\_picture: Vue d'ensemble](#framed_picture-vue-densemble)
-      1. [:file\_folder:  Structure de la partie externe.](#file_folder--structure-de-la-partie-externe)
-      1. [:hammer\_and\_wrench: Extensions Communes](#hammer_and_wrench-extensions-communes)
-   1. [:rocket: On y va ?](#rocket-on-y-va-)
-   1. [🚀 Comment bascule d'un projet à un autre ?](#-comment-bascule-dun-projet-à-un-autre-)
-   1. [📌 Notes](#-notes)
+Ce dossier contient une proposition de solution que j'utilise et j'espère KISS (enfin pourr moi çà l'est). Vous pouvez l'utiliser tel quel ou vous en inspirer au choix
+# Sommaire <!-- omit in toc -->
 
-## :warning: Avertissement <!-- omit in toc -->
-Comme tout ici, j'ai travaillé avec Le Matou :cat: (AKA : Lechat - Mistral AI) et biensur ce fut épique, partir d'une :thinking: et se faire aider par un :cat2: pour arrive a une :yarn:, c'est sportif et ne se fait pas en 2h comme beaucoup de DEV ou de créateurs de SAAS, que je croise, le pensent ou le disent
+1. [:thinking: L'idée](#thinking-lidée)
+1. [:wrench: Convention de nommage](#wrench-convention-de-nommage)
+1. [:framed\_picture: Vue d'ensemble](#framed_picture-vue-densemble)
+   1. [:file\_folder:  Structure de la partie externe.](#file_folder--structure-de-la-partie-externe)
+   1. [:hammer\_and\_wrench: Extensions Communes](#hammer_and_wrench-extensions-communes)
+1. [:rocket: Prêt à vous lancer ?](#rocket-prêt-à-vous-lancer-)
+1. [🚀 Comment bascule d'un projet à un autre ?](#-comment-bascule-dun-projet-à-un-autre-)
+1. [📌 Notes](#-notes)
 
-Ce dossier contient une proposition de solution que j'utilise et j'espère KISS (enfin pourr moi çà l'est). Vous pouvez l'utiliser telquel ou vous en inspirer au choix
+
 
 ## :thinking: L'idée
-J'utilise VSCode pour developper mes outils, parfois je le trouve chez les clients dans leurs Centre Logiciel (version officielle crosoft), parfois je peux venir avec mon portable (sous linux), patfois je suis chez moi en TT sur le PC fixe (aussi sous linux mais d'une autre famille)
+J'utilise VSCode pour développer mes outils, parfois je le trouve chez les clients dans leurs Centre Logiciel (version officielle Crosoft), parfois je peux venir avec mon portable (sous Linux), parfois je suis chez moi en TT sur le PC fixe (aussi sous Linux mais d'une autre famille)
 
-La question est donc, comment je me débrouille de manière aussi simple que possible pour accéder à mes petits secrets ou developper des projets perso ou pour mon client, récupérables  dans tous les cas, avec une connexion pas forcement simple et libre.
+La question est donc, comment je me débrouille de manière aussi simple que possible pour accéder à mes petits secrets ou développer des projets perso ou pour mon client, récupérables  dans tous les cas, avec une connexion pas forcement simple et libre.
 
 Cela passe par 3 axes : 
-- Un compte Github avec différents repo pour mes besoins (vous êtes actuellment sur l'un d'ente eux)
+- Un compte Github avec différents repo pour mes besoins (vous êtes actuellement sur l'un d'ente eux)
 - Un support externe (clef USB, DD ou dossier privé sur le pc qu'on me fourni si le RSSI a fait bloque les ports USB)
 - Un support interne (le pc fourni ou je mais ce que je fais spécifiquement pour le client)
 
-Un outils logiciel de developpemnt ici VSCode (officiel) ou codium (version libre sans télémétrie et flicage (fonctionne sous Wintruc et Linux))
+Un outils logiciel de développement ici VSCode (officiel) ou codium (version libre sans télémétrie et flicage (fonctionne sous Wintruc et Linux))
 
-## :wrench: Convention de nomage
-Dans ce document j'emploierai **Codium** pour désigne une installaitn officielle ou libre de VSCode
-- < **racine_ext** > : Point de montage linux ou Racine Windows de l'installation privée
+## :wrench: Convention de nommage
+Dans ce document j'emploierai **Codium** pour désigne une installation officielle ou libre de VSCode
+- < **racine_ext** > : Point de montage Linux ou Racine Windows de l'installation privée
   - exemple : `/mnt/usb_drive`
-- < **racine_int** > : Point de montage linux *$HOME** ou Racine Windows de l'installation du dossier de travail par défaut
+- < **racine_int** > : Point de montage Linux *$HOME** ou Racine Windows de l'installation du dossier de travail par défaut
   - exemple : `~` ou `$HOME` 
-- < **path_ext** > : chemin d'istallation de l'organisation externe
-  - exemple : `professionel\codium`
-- < **path_int** > : chemin d'istallation de l'organisation interne par defaut
+- < **path_ext** > : chemin d'installation de l'organisation externe
+  - exemple : `prof\codium`
+- < **path_int** > : chemin d'installation de l'organisation interne par défaut
   - exemple : `default_codium`
 - < **repo_priv** > : dossier contenant le repos git associe au repos privé de github
   - exemple : `perso` ou votre username
@@ -47,14 +47,14 @@ Dans ce document j'emploierai **Codium** pour désigne une installaitn officiell
 Vous avez donc une configuration **hybride** pour VSCodium, optimisée pour :
 - **Travailler sur plusieurs projets Git** en isolation un par < **repos_piv** >.
 - **Basculer facilement** entre un contexte global et des workspaces dédiés.
-- **Partager des fichiers** entre repository (ex: SQL, scripts, docs, ...) en vous placant sur < **racine_ext** >< **path_ext** > avant de vous remettre en mode isolé.
+- **Partager des fichiers** entre repository (ex: SQL, scripts, docs, ...) en vous plaçant sur < **racine_ext** >< **path_ext** > avant de vous remettre en mode isolé.
 ---
 
 ## :framed_picture: Vue d'ensemble
 ### :file_folder:  Structure de la partie externe.
 ```
 <racine_ext>/
-  └── <pathçext>/
+  └── <path_ext>/
         ├── <repo_priv>/        # :lock: Projet privé (GitHub privé)
         |      └── <repo_priv>.code-workspace
         ├── <repo_col>/         # :handshake:hake Projet collaboratif (GitHub privé/public)
@@ -68,7 +68,7 @@ Vous avez donc une configuration **hybride** pour VSCodium, optimisée pour :
 
 ### :hammer_and_wrench: Extensions Communes
 Toutes les configurations incluent ces extensions de base :
-- **:emojisense:** : Pour ajouter des icones sympas dans les markdown (au moin ici)
+- **:emojisense:** : Pour ajouter des icônes sympas dans les markdown (au moin ici)
 - **GitLens** : Superpouvoirs Git (historique, blame, etc.).
 - **macros** : permet de rajoute des macro a Codium
 - **Markdown All in One** : Édition avancée de Markdown.
@@ -77,11 +77,20 @@ Toutes les configurations incluent ces extensions de base :
 
 ---
 
-## :rocket: On y va ?
+## :rocket: Prêt à vous lancer ?
 
-:warning: ATTENTION, cette installation est prévue pour Linux.
+:warning: **Pour votre sécurité avant de vous faire :gun: **, une ou deux recommendations pour la route : 
+- Pour faciliter la personnalisation, utilisez des variables d'environnement :
+```bash
+export RACINE_EXT="/mnt/usb_drive"
+export PATH_EXT="prof/vscodium"
+```
+- Sauvegardez vos clés SSH et tokens GitHub en lieu sûr. (par exemple dans un coffre fort informatique (Keepass, Bitwarden,...) ou réel)
+- Si vous emmenez votre disque ou clef usb a l’extérieur, envisagez une solution de cryptage (ex : LUCKS sous Linux)
+- ATTENTION, cette installation est prévue pour Linux. Si vous êtes un Windowsien, pourquoi ne pas regarde du cote de WSL et comment a faire pousser votre barbe :smile:
 
 Désolé, je n'ai que la version non automatisée (en cours de dev) à proposer pour le moment mais même un :bearded_person: léger devrait s'en sortir ...
+
 Vous la trouverez [ici](docs/vscodium_tout_terrain.md)
 
 
