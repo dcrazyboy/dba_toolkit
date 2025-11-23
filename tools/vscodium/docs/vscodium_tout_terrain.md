@@ -105,40 +105,45 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
 Charger le package de mise a jour du noyau Windows
-https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
+
+[Télécharger la mise à jour du noyau WSL 2](https://aka.ms/wsl2kernel)
+
 et l'executer
 
 Revenir sous powershel mode administrateur
 ```powershell
-# définir WSL 2 par defaut
+# définir WSL 2 par défaut
 wsl.exe --set-default-version 2
 ```
 Redémarrer le PC
 #### Installer une distribution Linux
 Revenir sur Powershell en mode administrateur
 ```powershell
-# Liste les distros disponibles
+# Liste les distributions disponibles
 wsl --list --online
 
 # Installe Ubuntu 22.04 (recommandé pour la compatibilité)
+# exemple
 wsl --install -d Ubuntu-22.04
 ```
 
 Quand l'installation est finie, lancer Ubuntu depuis le Menu Démarrer et configurer un utilisateur et un mot de passe
 Dans le terminal qui s'ouvre (ATTENTION la on est en Bash et pas en Powershell)
-Mettre a jour Linux
+Mettre a jour Linux dans WSL
 ```bash
-sudo apt update && sudo apt upgrade -y
-# suivant le système choisi
+# suivant la distribution choisie
 #red Hat family
+sudo nf update && sudo dnf upgrade -y
 sudo dnf install git
 #open SUSE
+sudo zipper dup
 sudo zupper instal git
 #debian
+sudo apt update && sudo apt upgrade -y
 sudo apt install git
 ```
 #### Points à vérifier
-Accès aux fichiers Windows : Dans WSL, les disques windows sont montés sous /mnt/< lettre du disque windows >
+- Accès aux fichiers Windows : Dans WSL, les disques windows sont montés sous /mnt/< lettre du disque windows >
 Dans le terminal WSL : 
 ```bash
 ls /mnt/<disque windows> 
@@ -147,14 +152,25 @@ ls /mnt/<disque windows>
 touch /mnt/c/Users/<user windows>/test_wsl.txt
 # vérifier que le fichier est bien visible et accessible depuis l'explorateur windows
 ```
+- :warning: Les fichiers situés dans /mnt/< disque >/ peuvent être plus lents que ceux dans le système de fichiers natif de WSL (~/).
+- :warning: Pour de meilleurs performances, stockez vos projets dans ~/< dossier par défaut >/ et utilisez /mnt/ uniquement pour les fichiers partagés avec Windows.
+- L'installation finalisé, vous pouvez sauvegarder/restaurer votre distribution pour gagner un peu de place et libérer de la mémoire et de la CPU en utilisant Powershell
+```Powershell
+# Sauvegarde
+wsl --export Ubuntu-22.04 backup.tar
+# restauration
+wsl --import Ubuntu-22.04 C:\wsl\ubuntu backup.tar
+``` 
 
 #### Installation de Codium
-Il va y avoir une double installation a faire
-- dans le terminal WSL, utiliser l'installation précédemment décrite en fonction de votre famille de distribution Linux
-- Dans Windows : 
+Il va y avoir une double installation à faire
+- dans le terminal WSL pour les outils, utiliser l'installation précédemment décrite en fonction de votre famille de distribution Linux
+- Dans Windows pour l'interface: 
   - Si ce n'est pas deja fait, installer VSCodium depuis : https://vscodium.com/
   - Ouvris VSCodium et installer l'extension "Remote - WSL"
   - Lance un terminal intégré (Ctrl+Shift+P → "New WSL Window") une fois pour initialiser le partage, apres vous pourrez lancer codium depuis le terminal et finir l'installation depuis le terminal
+
+Une fois la double installation faite (WSL Linux et Windows), le reste se fera dans WSL comme avec un Linux normal
 
 ## :construction: L'espace de travail
 
