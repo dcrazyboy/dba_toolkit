@@ -2,11 +2,12 @@
 1. [Installation VSCodium tout terrain](#installation-vscodium-tout-terrain)
    1. [:thinking: But](#thinking-but)
    1. [:wrench: Prérequis](#wrench-prérequis)
-   1. [Installer VSCodium](#installer-vscodium)
+   1. [:construction\_worker\_man: Installer VSCodium](#construction_worker_man-installer-vscodium)
       1. [Sur Red Hat family (Red Hat, Fedora, Rocky, CentOS, Almalinux, ...)](#sur-red-hat-family-red-hat-fedora-rocky-centos-almalinux-)
       1. [Sur openSUSE family (Tumbleweed, Leap, ...)](#sur-opensuse-family-tumbleweed-leap-)
       1. [Sur Debian family (Debian, Ubuntu, Mint, ...)](#sur-debian-family-debian-ubuntu-mint-)
-   1. [L'espace de travail](#lespace-de-travail)
+      1. [Sur Windows via WSL](#sur-windows-via-wsl)
+   1. [:construction: L'espace de travail](#construction-lespace-de-travail)
       1. [Arborescence](#arborescence)
          1. [:file\_folder:  Structure de la partie externe.](#file_folder--structure-de-la-partie-externe)
          1. [:file\_folder:  Structure de la partie interne.](#file_folder--structure-de-la-partie-interne)
@@ -66,7 +67,7 @@ V8: 13.8.258.32-electron.0
   - accès au terminal
   - votre éditeur préféré (vim, nano, emacs,...)
 
-## Installer VSCodium
+## :construction_worker_man: Installer VSCodium
 Vous pouvez bien sûr utilise Snap, mais je préfère la méthode :hammer_and_wrench: 
 
 ### Sur Red Hat family (Red Hat, Fedora, Rocky, CentOS, Almalinux, ...)
@@ -92,8 +93,11 @@ echo "deb [arch=amd64 signed-by=/usr/share/keyrings/vscodium.gpg] https://downlo
 sudo apt update
 sudo apt install codium
 ```
+### Sur Windows via WSL
+Bah oui c'est possible
+a déveloper
 
-## L'espace de travail
+## :construction: L'espace de travail
 
 Choix : Installation de l'espace de travail sur disque externe ou clef usb (petits projets ou pour demo/partage)
 
