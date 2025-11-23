@@ -34,4 +34,4 @@ __pycache__/
 pg_log/
 log/
 
-postgres_dba_toolkit.code-workspace
+dba_toolkit.code-workspace

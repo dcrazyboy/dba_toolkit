@@ -1,7 +1,22 @@
-# PostgreSQL DBA Toolkit 🐘 (En Développement)
+# DBA Toolkit (En Développement)
 
 **Boîte à outils en cours de construction** pour les administrateurs PostgreSQL (débutants ou pas).
 *Ce dépôt est actuellement en développement actif. Certaines fonctionnalités et scripts ne sont pas encore disponibles.*
+
+---
+## 📋 Table des Matières
+1. [DBA Toolkit (En Développement)](#dba-toolkit-en-développement)
+   1. [📋 Table des Matières](#-table-des-matières)
+   1. [⚠️ Statut Actuel](#️-statut-actuel)
+   1. [📌 Prérequis](#-prérequis)
+   1. [🚀 Installation](#-installation)
+   1. [📂 Structure du Dépôt](#-structure-du-dépôt)
+   1. [🛠 Utilisation](#-utilisation)
+   1. [🤝 Contribuer](#-contribuer)
+   1. [📜 Licence](#-licence)
+   1. [💡 Exemples d’Utilisation](#-exemples-dutilisation)
+   1. [⚠️ Avertissements](#️-avertissements)
+   1. [📬 Contact](#-contact)
 
 ---
 
@@ -16,21 +31,6 @@
 
 ---
 
-## 📋 Table des Matières
-1. [PostgreSQL DBA Toolkit 🐘 (En Développement)](#postgresql-dba-toolkit--en-développement)
-   1. [⚠️ Statut Actuel](#️-statut-actuel)
-   1. [📋 Table des Matières](#-table-des-matières)
-   1. [📌 Prérequis](#-prérequis)
-   1. [🚀 Installation](#-installation)
-   1. [📂 Structure du Dépôt](#-structure-du-dépôt)
-   1. [🛠 Utilisation](#-utilisation)
-   1. [🤝 Contribuer](#-contribuer)
-   1. [📜 Licence](#-licence)
-   1. [💡 Exemples d’Utilisation](#-exemples-dutilisation)
-   1. [⚠️ Avertissements](#️-avertissements)
-   1. [📬 Contact](#-contact)
-
----
 
 ## 📌 Prérequis
 - **PostgreSQL** (version 10+ recommandée).
