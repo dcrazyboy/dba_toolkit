@@ -7,6 +7,10 @@
       1. [Sur openSUSE family (Tumbleweed, Leap, ...)](#sur-opensuse-family-tumbleweed-leap-)
       1. [Sur Debian family (Debian, Ubuntu, Mint, ...)](#sur-debian-family-debian-ubuntu-mint-)
       1. [Sur Windows via WSL](#sur-windows-via-wsl)
+         1. [Installer WSL](#installer-wsl)
+         1. [Installer une distribution Linux](#installer-une-distribution-linux)
+         1. [Points à vérifier](#points-à-vérifier)
+         1. [Installation de Codium](#installation-de-codium)
    1. [:construction: L'espace de travail](#construction-lespace-de-travail)
       1. [Arborescence](#arborescence)
          1. [:file\_folder:  Structure de la partie externe.](#file_folder--structure-de-la-partie-externe)
@@ -84,18 +88,73 @@ sudo zypper install codium
 ```
 ### Sur Debian family (Debian, Ubuntu, Mint, ...)
 ```bash
-#installer les dépendances
-sudo apt install dirmngr software-properties-common apt-transport-https curl -y
-#installer le repo
-curl -fSsL https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg | sudo gpg --dearmor | sudo tee /usr/share/keyrings/vscodium.gpg >/dev/null
-echo "deb [arch=amd64 signed-by=/usr/share/keyrings/vscodium.gpg] https://download.vscodium.com/debs vscodium main" | sudo tee /etc/apt/sources.list.d/vscodium.list
-#installer codium
+# Ajoute le dépôt VSCodium
+wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg | sudo apt-key add -
+echo 'deb https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium main' | sudo tee /etc/apt/sources.list.d/vscodium.list
 sudo apt update
-sudo apt install codium
+sudo apt install codium -y
 ```
 ### Sur Windows via WSL
-Bah oui c'est possible
-a déveloper
+Bah oui c'est possible, j'ai testé sur un  portable Windows 10 impossible à upgrader en 11 et que je ne peux pas basculer sous Linux pour le moment. Voila ma procédure, mais les Windosiens sauront adapter et pourquoi pas partager
+#### Installer WSL
+Lancer Powershel en mode administrateur
+```Powershell
+# activer le sous-système
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+# active la fonctionalite de machine virtuelle
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+```
+Charger le package de mise a jour du noyau Windows
+https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi
+et l'executer
+
+Revenir sous powershel mode administrateur
+```powershell
+# définir WSL 2 par defaut
+wsl.exe --set-default-version 2
+```
+Redémarrer le PC
+#### Installer une distribution Linux
+Revenir sur Powershell en mode administrateur
+```powershell
+# Liste les distros disponibles
+wsl --list --online
+
+# Installe Ubuntu 22.04 (recommandé pour la compatibilité)
+wsl --install -d Ubuntu-22.04
+```
+
+Quand l'installation est finie, lancer Ubuntu depuis le Menu Démarrer et configurer un utilisateur et un mot de passe
+Dans le terminal qui s'ouvre (ATTENTION la on est en Bash et pas en Powershell)
+Mettre a jour Linux
+```bash
+sudo apt update && sudo apt upgrade -y
+# suivant le système choisi
+#red Hat family
+sudo dnf install git
+#open SUSE
+sudo zupper instal git
+#debian
+sudo apt install git
+```
+#### Points à vérifier
+Accès aux fichiers Windows : Dans WSL, les disques windows sont montés sous /mnt/< lettre du disque windows >
+Dans le terminal WSL : 
+```bash
+ls /mnt/<disque windows> 
+#affiche l'arborescence de <disque windows>:\
+# créer un fichier
+touch /mnt/c/Users/<user windows>/test_wsl.txt
+# vérifier que le fichier est bien visible et accessible depuis l'explorateur windows
+```
+
+#### Installation de Codium
+Il va y avoir une double installation a faire
+- dans le terminal WSL, utiliser l'installation précédemment décrite en fonction de votre famille de distribution Linux
+- Dans Windows : 
+  - Si ce n'est pas deja fait, installer VSCodium depuis : https://vscodium.com/
+  - Ouvris VSCodium et installer l'extension "Remote - WSL"
+  - Lance un terminal intégré (Ctrl+Shift+P → "New WSL Window") une fois pour initialiser le partage, apres vous pourrez lancer codium depuis le terminal et finir l'installation depuis le terminal
 
 ## :construction: L'espace de travail
 
