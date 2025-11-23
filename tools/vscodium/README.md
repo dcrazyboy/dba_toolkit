@@ -1,20 +1,19 @@
-#  VSCodium
+#  Table des matières
+
+1. [Table des matières](#table-des-matières)
+   1. [:thinking: L'idée](#thinking-lidée)
+   1. [:wrench: Convention de nomage](#wrench-convention-de-nomage)
+   1. [:framed\_picture: Vue d'ensemble](#framed_picture-vue-densemble)
+      1. [:file\_folder:  Structure de la partie externe.](#file_folder--structure-de-la-partie-externe)
+      1. [:hammer\_and\_wrench: Extensions Communes](#hammer_and_wrench-extensions-communes)
+   1. [:rocket: On y va ?](#rocket-on-y-va-)
+   1. [🚀 Comment bascule d'un projet à un autre ?](#-comment-bascule-dun-projet-à-un-autre-)
+   1. [📌 Notes](#-notes)
 
 ## :warning: Avertissement <!-- omit in toc -->
 Comme tout ici, j'ai travaillé avec Le Matou :cat: (AKA : Lechat - Mistral AI) et biensur ce fut épique, partir d'une :thinking: et se faire aider par un :cat2: pour arrive a une :yarn:, c'est sportif et ne se fait pas en 2h comme beaucoup de DEV ou de créateurs de SAAS, que je croise, le pensent ou le disent
 
 Ce dossier contient une proposition de solution que j'utilise et j'espère KISS (enfin pourr moi çà l'est). Vous pouvez l'utiliser telquel ou vous en inspirer au choix
-
-1. [VSCodium](#vscodium)
-   1. [:thinking: L'idée](#thinking-lidée)
-   1. [:wrench: Convention de nomage](#wrench-convention-de-nomage)
-   1. [:framed\_picture: Vue d'ensemble](#framed_picture-vue-densemble)
-      1. [:file\_folder:  Structure de la aprtie externe.](#file_folder--structure-de-la-aprtie-externe)
-      1. [:hammer\_and\_wrench: Extensions Communes](#hammer_and_wrench-extensions-communes)
-   1. [:rocket: On y va ?](#rocket-on-y-va-)
-   1. [🚀 Comment bascule d'un projet à un autre ?](#-comment-bascule-dun-projet-à-un-autre-)
-   1. [🎯 Raccourcis Clavier Utiles](#-raccourcis-clavier-utiles)
-   1. [📌 Notes](#-notes)
 
 ## :thinking: L'idée
 J'utilise VSCode pour developper mes outils, parfois je le trouve chez les clients dans leurs Centre Logiciel (version officielle crosoft), parfois je peux venir avec mon portable (sous linux), patfois je suis chez moi en TT sur le PC fixe (aussi sous linux mais d'une autre famille)
@@ -31,12 +30,19 @@ Un outils logiciel de developpemnt ici VSCode (officiel) ou codium (version libr
 ## :wrench: Convention de nomage
 Dans ce document j'emploierai **Codium** pour désigne une installaitn officielle ou libre de VSCode
 - < **racine_ext** > : Point de montage linux ou Racine Windows de l'installation privée
+  - exemple : `/mnt/usb_drive`
 - < **racine_int** > : Point de montage linux *$HOME** ou Racine Windows de l'installation du dossier de travail par défaut
+  - exemple : `~` ou `$HOME` 
 - < **path_ext** > : chemin d'istallation de l'organisation externe
+  - exemple : `professionel\codium`
 - < **path_int** > : chemin d'istallation de l'organisation interne par defaut
+  - exemple : `default_codium`
 - < **repo_priv** > : dossier contenant le repos git associe au repos privé de github
+  - exemple : `perso` ou votre username
 - < **repo_col** > : dossier contenant le repos git associe au repos collaboratif de github (par exemple pour permettre au :cat: de mettre son museau et valider)
+  - exemple : nom du projet partage ou le chat IA avec qui vous collable `lecaht_work`
 - < **repo_pub** > : dossier contenant le repos git associe au repos public de github (celui ou vous me lisez)
+  - exemple : `postgreSQL` ou `dba_toolkit`
 
 Vous avez donc une configuration **hybride** pour VSCodium, optimisée pour :
 - **Travailler sur plusieurs projets Git** en isolation un par < **repos_piv** >.
@@ -45,7 +51,7 @@ Vous avez donc une configuration **hybride** pour VSCodium, optimisée pour :
 ---
 
 ## :framed_picture: Vue d'ensemble
-### :file_folder:  Structure de la aprtie externe.
+### :file_folder:  Structure de la partie externe.
 ```
 <racine_ext>/
   └── <pathçext>/
@@ -76,7 +82,7 @@ Toutes les configurations incluent ces extensions de base :
 :warning: ATTENTION, cette installation est prévue pour Linux.
 
 Désolé, je n'ai que la version non automatisée (en cours de dev) à proposer pour le moment mais même un :bearded_person: léger devrait s'en sortir ...
-Vous la trouverez 
+Vous la trouverez [ici](docs/vscodium_tout_terrain.md)
 
 
 ## 🚀 Comment bascule d'un projet à un autre ?
@@ -88,16 +94,6 @@ Vous la trouverez
 
 ---
 
-## 🎯 Raccourcis Clavier Utiles
-| Action                           | Raccourci    |
-| :------------------------------- | :----------- |
-
-
-*(Les raccourcis sont configurés dans `keybindings.json`.)*
-
----
-
 ## 📌 Notes
-- Les **emojis Markdown** sont disponibles dans `emojis.md`.
 - Les **paramètres communs** sont dans `settings.json` (partagés entre tous les workspaces).
 - Pour ajouter des **extensions spécifiques** à un projet, édite son fichier `.code-workspace`.
