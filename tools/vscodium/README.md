@@ -10,8 +10,7 @@ Ce dossier contient une proposition de solution que j'utilise et j'espère KISS 
    1. [:file\_folder:  Structure de la partie externe.](#file_folder--structure-de-la-partie-externe)
    1. [:hammer\_and\_wrench: Extensions Communes](#hammer_and_wrench-extensions-communes)
 1. [:rocket: Prêt à vous lancer ?](#rocket-prêt-à-vous-lancer-)
-1. [🚀 Comment bascule d'un projet à un autre ?](#-comment-bascule-dun-projet-à-un-autre-)
-1. [📌 Notes](#-notes)
+1. [� Notes complémentaires](#-notes-complémentaires)
 
 
 
@@ -79,7 +78,7 @@ Toutes les configurations incluent ces extensions de base :
 
 ## :rocket: Prêt à vous lancer ?
 
-:warning: **Pour votre sécurité avant de vous faire :gun: **, une ou deux recommendations pour la route : 
+:warning: **Pour votre sécurité avant de vous faire :gun:**, une ou deux recommendations pour la route : 
 - Pour faciliter la personnalisation, utilisez des variables d'environnement :
 ```bash
 export RACINE_EXT="/mnt/usb_drive"
@@ -87,22 +86,20 @@ export PATH_EXT="prof/vscodium"
 ```
 - Sauvegardez vos clés SSH et tokens GitHub en lieu sûr. (par exemple dans un coffre fort informatique (Keepass, Bitwarden,...) ou réel)
 - Si vous emmenez votre disque ou clef usb a l’extérieur, envisagez une solution de cryptage (ex : LUCKS sous Linux)
-- ATTENTION, cette installation est prévue pour Linux. Si vous êtes un Windowsien, pourquoi ne pas regarde du cote de WSL et comment a faire pousser votre barbe :smile:
+- ATTENTION, cette installation est prévue pour Linux. Si vous êtes un Windowsien, pourquoi ne pas en profiter pour regarder du coté de WSL et commencer à faire pousser votre barbe :smile:
 
-Désolé, je n'ai que la version non automatisée (en cours de dev) à proposer pour le moment mais même un :bearded_person: léger devrait s'en sortir ...
+Désolé, je n'ai que la version non automatisée à proposer pour le moment mais même un :bearded_person: léger devrait s'en sortir ...
 
 Vous la trouverez [ici](docs/vscodium_tout_terrain.md)
 
+---
 
-## 🚀 Comment bascule d'un projet à un autre ?
+## 📌 Notes complémentaires
+- Les **paramètres communs** sont dans `settings.json` (partagés entre tous les workspaces).
+- Pour ajouter des **extensions spécifiques** à un projet, édite son fichier `.code-workspace`.
+- Comment bascule d'un projet à un autre ?
 
 ![alt text](docs/use_project_manager.png)
 
 1. Dans la side bar, choisit Project Manager
-2. Dans les favoris choisir le projet global (vscodium) ou le sous-projet que l'on veux utilliser 
-
----
-
-## 📌 Notes
-- Les **paramètres communs** sont dans `settings.json` (partagés entre tous les workspaces).
-- Pour ajouter des **extensions spécifiques** à un projet, édite son fichier `.code-workspace`.
+2. Dans les favoris choisir le projet global (vscodium) ou le sous-projet que l'on veux utiliser 
