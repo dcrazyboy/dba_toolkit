@@ -9,10 +9,12 @@ Ce dossier contient une proposition de solution que j'utilise et j'espère KISS 
    1. [:thinking: L'idée](#thinking-lidée)
    1. [:wrench: Convention de nomage](#wrench-convention-de-nomage)
    1. [:framed\_picture: Vue d'ensemble](#framed_picture-vue-densemble)
-      1. [:file\_folder:  Structure de la partie externe.](#file_folder--structure-de-la-partie-externe)
-      1. [:file\_folder:  Structure de la partie interne.](#file_folder--structure-de-la-partie-interne)
+      1. [:file\_folder:  Structure de la aprtie externe.](#file_folder--structure-de-la-aprtie-externe)
       1. [:hammer\_and\_wrench: Extensions Communes](#hammer_and_wrench-extensions-communes)
    1. [:rocket: On y va ?](#rocket-on-y-va-)
+   1. [🚀 Comment bascule d'un projet à un autre ?](#-comment-bascule-dun-projet-à-un-autre-)
+   1. [🎯 Raccourcis Clavier Utiles](#-raccourcis-clavier-utiles)
+   1. [📌 Notes](#-notes)
 
 ## :thinking: L'idée
 J'utilise VSCode pour developper mes outils, parfois je le trouve chez les clients dans leurs Centre Logiciel (version officielle crosoft), parfois je peux venir avec mon portable (sous linux), patfois je suis chez moi en TT sur le PC fixe (aussi sous linux mais d'une autre famille)
@@ -27,7 +29,7 @@ Cela passe par 3 axes :
 Un outils logiciel de developpemnt ici VSCode (officiel) ou codium (version libre sans télémétrie et flicage (fonctionne sous Wintruc et Linux))
 
 ## :wrench: Convention de nomage
-Dans ce document j'emploierai **VSCodium** pour désigne une installaitn officielle ou libre de VSCode
+Dans ce document j'emploierai **Codium** pour désigne une installaitn officielle ou libre de VSCode
 - < **racine_ext** > : Point de montage linux ou Racine Windows de l'installation privée
 - < **racine_int** > : Point de montage linux *$HOME** ou Racine Windows de l'installation du dossier de travail par défaut
 - < **path_ext** > : chemin d'istallation de l'organisation externe
@@ -43,10 +45,10 @@ Vous avez donc une configuration **hybride** pour VSCodium, optimisée pour :
 ---
 
 ## :framed_picture: Vue d'ensemble
-### :file_folder:  Structure de la partie externe.
+### :file_folder:  Structure de la aprtie externe.
 ```
 <racine_ext>/
-  └── <path_ext>/
+  └── <pathçext>/
         ├── <repo_priv>/        # :lock: Projet privé (GitHub privé)
         |      └── <repo_priv>.code-workspace
         ├── <repo_col>/         # :handshake:hake Projet collaboratif (GitHub privé/public)
@@ -54,12 +56,6 @@ Vous avez donc une configuration **hybride** pour VSCodium, optimisée pour :
         ├── <repo_pub/          # :earth_africa: Projet public (GitHub public)
         |      └── <repo_pub>.code-workspace
         └── README.md           # Ce fichier
-```
-### :file_folder:  Structure de la partie interne.
-Ceci est la partie installation par defaut si le disque externe n'est pas présent
-```
-<racine_int>/
-  └── <path_int>/
 ```
 
 ---
@@ -79,5 +75,29 @@ Toutes les configurations incluent ces extensions de base :
 
 :warning: ATTENTION, cette installation est prévue pour Linux.
 
-Désolé, je ne propose que la version non automatisée, un :bearded_person: même debutant devrait s'en sortir ...
-Vous la trouverez [ici](docs/vscodium_tout_terrain.md)
+Désolé, je n'ai que la version non automatisée (en cours de dev) à proposer pour le moment mais même un :bearded_person: léger devrait s'en sortir ...
+Vous la trouverez 
+
+
+## 🚀 Comment bascule d'un projet à un autre ?
+
+![alt text](docs/use_project_manager.png)
+
+1. Dans la side bar, choisit Project Manager
+2. Dans les favoris choisir le projet global (vscodium) ou le sous-projet que l'on veux utilliser 
+
+---
+
+## 🎯 Raccourcis Clavier Utiles
+| Action                           | Raccourci    |
+| :------------------------------- | :----------- |
+
+
+*(Les raccourcis sont configurés dans `keybindings.json`.)*
+
+---
+
+## 📌 Notes
+- Les **emojis Markdown** sont disponibles dans `emojis.md`.
+- Les **paramètres communs** sont dans `settings.json` (partagés entre tous les workspaces).
+- Pour ajouter des **extensions spécifiques** à un projet, édite son fichier `.code-workspace`.
