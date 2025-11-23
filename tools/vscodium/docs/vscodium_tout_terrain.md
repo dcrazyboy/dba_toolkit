@@ -252,12 +252,12 @@ codium --install-extension timonwong.shellcheck
 Récupérer sur github les fichiers scripts dans dba_toolkit/tool/vscodium/scripts et les installer
 ```bash
 # Téléchargement des fichiers de workspace codium pour chaque repo (ne pas oublie de mettre les bonnes valeurs dans la commande pour <repo_xxx> )
-wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/tree/main/tools/vscodium/workspaces_and_settings/<repo_xxx>.code-workspace -O <racine_ext>/<path_ext>/<repo_xxx>/<repo_xxx>.code-workspace
+wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/workspaces_and_settings/<repo_xxx>.code-workspace -O <racine_ext>/<path_ext>/<repo_xxx>/<repo_xxx>.code-workspace
 # Téléchargement des fichiers de configuration codium
-wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/tree/main/tools/vscodium/workspaces_and_settings/settings.json -O ~/scripts/settings.json
-wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/tree/main/tools/vscodium/workspaces_and_settings/projects.json -O ~/scripts/projects.json
+wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/workspaces_and_settings/settings.json -O ~/scripts/settings.json
+wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/workspaces_and_settings/projects.json -O ~/scripts/projects.json
 # Téléchargement des fichiers de scripts
-wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/tree/main/tools/vscodium/scripts/launch_codium.sh -O ~/scripts/launch_codium.sh
+wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/scripts/launch_codium.sh -O ~/scripts/launch_codium.sh
 ```
 Avec votre éditeur préféré dans les fichiers récupérés sur **~/scripts/**, remplacer < racine_ext >, < path_ext > et < repo_xxx > par vos propres valeurs
 
@@ -289,7 +289,7 @@ Il doit démarrer dan le dossier par défaut ~/default_codium
 Branche le DD ou la clef USB
 Vérifier qu'elle est bien montée et accessible
 Relance VSCodium
-Il doit démarre sur < disque externe >/prof/vscodium
+Il doit démarre sur < racine_ext >/< path_ext >
 
 ## 📌 Notes
 ### Paramétrage et shortcut
