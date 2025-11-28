@@ -42,7 +42,7 @@
          1. [Comment les Utiliser ?](#comment-les-utiliser-)
       1. [A propos de project manager](#a-propos-de-project-manager)
          1. [Comment bascule d'un projet à un autre ?](#comment-bascule-dun-projet-à-un-autre-)
-   1. [🔍 Ptit Bonus : Script de Validation](#-ptit-bonus--script-de-validation)
+   1. [🔍 P'tit Bonus : Script de Validation](#-ptit-bonus--script-de-validation)
    1. [:pray: Remerciement](#pray-remerciement)
 
 ## :thinking: But
@@ -134,11 +134,11 @@ Mettre a jour Linux dans WSL
 ```bash
 # suivant la distribution choisie
 #red Hat family
-sudo nf update && sudo dnf upgrade -y
+sudo dnf update && sudo dnf upgrade -y
 sudo dnf install git
 #open SUSE
-sudo zipper dup
-sudo zupper instal git
+sudo zypper dup
+sudo zypper instal git
 #debian
 sudo apt update && sudo apt upgrade -y
 sudo apt install git
@@ -154,7 +154,7 @@ touch /mnt/c/Users/<user windows>/test_wsl.txt
 # vérifier que le fichier est bien visible et accessible depuis l'explorateur windows
 ```
 - :warning: Les fichiers situés dans /mnt/< disque >/ peuvent être plus lents que ceux dans le système de fichiers natif de WSL (~/).
-- :warning: Pour de meilleurs performances, stockez vos projets dans ~/< dossier par défaut >/ et utilisez /mnt/ uniquement pour les fichiers partagés avec Windows.
+- :warning: Pour de meilleurs performances, stockez vos projets dans ~/projects/ et utilisez /mnt/< disque > uniquement pour les fichiers partagés avec Windows.
 - L'installation finalisé, vous pouvez sauvegarder/restaurer votre distribution pour gagner un peu de place et libérer de la mémoire et de la CPU en utilisant Powershell
 ```Powershell
 # Sauvegarde
@@ -418,12 +418,16 @@ Pour ajouter des **extensions spécifiques** à un projet, édite son fichier `.
 1. Dans la side bar, choisit Project Manager
 2. Dans les favoris choisir le projet global (vscodium) ou le sous-projet que l'on veux utiliser 
 
-## 🔍 Ptit Bonus : Script de Validation
+## 🔍 P'tit Bonus : Script de Validation
 Pour vérifier que votre environnement est prêt, exécutez :
 ```bash
 wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/scripts/validate_vscodium.sh
 chmod +x validate_vscodium.sh
 ./validate_vscodium.sh "< Disque Externe >"
+```
+Exemple d'utilisation :
+```bash
+./validate_codium.sh "/mnt/d"  # Remplacez "/mnt/d" par votre chemin de disque externe
 ```
 
 ## :pray: Remerciement

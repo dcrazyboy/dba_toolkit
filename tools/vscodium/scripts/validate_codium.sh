@@ -19,6 +19,12 @@ echo "   Auteur : D. Crazyboy"
 echo "   Version : 1.1.0"
 echo ""
 
+# Vérification de curl 
+if ! command -v curl &> /dev/null; then
+    echo "⚠️ 'curl' n'est pas installé. Le test GitHub sera ignoré."
+    flag_github=false
+fi
+
 # =============================================
 # SECTION 1 : Validation du disque externe
 # =============================================
@@ -106,16 +112,18 @@ fi
 # =============================================
 echo -e "\n📌 [4/5] Vérification de l'accès à GitHub (facultatif)..."
 
-# Test de connexion à GitHub (sans bloquer le script)
-if curl --output /dev/null --silent --head --fail "https://github.com"; then
-    echo "✅ Accès à GitHub : OK (facultatif pour les fichiers de configuration)."
-    echo "   Vous pouvez télécharger les fichiers depuis :"
-    echo "   https://github.com/dcrazyboy/dba_toolkit/tree/main/tools/vscodium"
-else
-    echo "⚠️ Accès à GitHub : Impossible (facultatif)."
-    echo "   - Vérifiez votre connexion Internet."
-    echo "   - Les fichiers de configuration devront être installés manuellement."
-    flag_github=false
+if flag_github ; then # on ne fait le test que si le test curl en entete est validé
+  # Test de connexion à GitHub (sans bloquer le script)
+  if curl --output /dev/null --silent --head --fail "https://github.com"; then
+      echo "✅ Accès à GitHub : OK (facultatif pour les fichiers de configuration)."
+      echo "   Vous pouvez télécharger les fichiers depuis :"
+      echo "   https://github.com/dcrazyboy/dba_toolkit/tree/main/tools/vscodium"
+  else
+      echo "⚠️ Accès à GitHub : Impossible (facultatif)."
+      echo "   - Vérifiez votre connexion Internet."
+      echo "   - Les fichiers de configuration devront être installés manuellement."
+      flag_github=false
+  fi
 fi
 
 # =============================================
@@ -126,7 +134,13 @@ echo -e "\n📌 [5/5] Vérification de VSCodium et des extensions..."
 if ! command -v codium &> /dev/null; then
     echo "❌ VSCodium n'est pas installé."
     echo "   Solution : Suivez les commandes d'installation ci-dessus pour votre distro."
-    flag_codium=fales
+    case $ID in
+        ubuntu|debian|mint) echo "   → Voir section Debian ci-dessus." ;;
+        fedora|rhel|centos|rocky|almalinux) echo "   → Voir section Red Hat ci-dessus." ;;
+        opensuse*) echo "   → Voir section openSUSE ci-dessus." ;;
+        *) echo "Distribution non prise en compte"
+    esac        
+    flag_codium=false
 else
     echo "✅ VSCodium est installé : $(codium --version | head -n 1)"
 
@@ -139,7 +153,7 @@ else
     done
 
     if [ ${#MISSING_EXTENSIONS[@]} -gt 0 ]; then
-        echo "⚠️ Extensions manquantes : ${MISSING_EXTENSIONS[*]}"
+        echo "⚠️ Extensions manquantes : "
         echo "   Solution : Installez-les avec :"
         for ext in "${MISSING_EXTENSIONS[@]}"; do
             echo "   codium --install-extension $ext"
