@@ -42,6 +42,7 @@
          1. [Comment les Utiliser ?](#comment-les-utiliser-)
       1. [A propos de project manager](#a-propos-de-project-manager)
          1. [Comment bascule d'un projet à un autre ?](#comment-bascule-dun-projet-à-un-autre-)
+   1. [🔍 Ptit Bonus : Script de Validation](#-ptit-bonus--script-de-validation)
    1. [:pray: Remerciement](#pray-remerciement)
 
 ## :thinking: But
@@ -92,7 +93,7 @@ sudo zypper install codium
 wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/-/raw/master/pub.gpg | sudo apt-key add -
 echo 'deb https://paulcarroty.gitlab.io/vscodium-deb-rpm-repo/debs/ vscodium main' | sudo tee /etc/apt/sources.list.d/vscodium.list
 sudo apt update
-sudo apt install codium -y
+sudo apt install codium 
 ```
 ### Sur Windows via WSL
 Bah oui c'est possible, j'ai testé sur un  portable Windows 10 impossible à upgrader en 11 et que je ne peux pas basculer sous Linux pour le moment. Voila ma procédure, mais les Windosiens sauront adapter et pourquoi pas partager
@@ -207,7 +208,7 @@ cd <racine_ext>
 # créer le dossier de stockage
 mkdir -p <path_ext>
 # créer les dossier projets
-mkdir -p vscodium/{.vscode,<repo_priv>,<repo_col>,<repo_pub>}
+mkdir -p <path_ext>/{<repo_priv>,<repo_col>,<repo_pub>}
 
 # 2) gerer git
 # pour chaque repo
@@ -416,7 +417,15 @@ Pour ajouter des **extensions spécifiques** à un projet, édite son fichier `.
 
 1. Dans la side bar, choisit Project Manager
 2. Dans les favoris choisir le projet global (vscodium) ou le sous-projet que l'on veux utiliser 
----
+
+## 🔍 Ptit Bonus : Script de Validation
+Pour vérifier que votre environnement est prêt, exécutez :
+```bash
+wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/scripts/validate_vscodium.sh
+chmod +x validate_vscodium.sh
+./validate_vscodium.sh "< Disque Externe >"
+```
+
 ## :pray: Remerciement
 - A tous ceux qui maintiennent et mettent a disposition **Codium**
 - A tous ceux qui maintiennent et mettent a disposition les extensions d e **Codium** qui m'aident bien
