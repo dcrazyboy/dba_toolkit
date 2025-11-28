@@ -111,5 +111,5 @@ Pour toute question ou suggestion, [ouvrez une issue](https://github.com/dcrazyb
 - Aux mainteneurs de VSCodium et de ses extensions.
 - À la communauté open-source pour les outils utilisés (Git, PostgreSQL, etc.).
 - À la communauté Github qui a été une source d'inspiration par le partage où j'espère apporte ma Pierre
-- Au Matou 🐱 (aka Lechat de Mistral AI) pour l’aide à la rédaction, aux tests et sa compilation de milliers de pages de documentation me permettant d'affiner ma compréhension dans les domaines que je maitrise moins. 
+- Au Matou 🐱 (aka Lechat de Mistral AI) pour l’aide à la rédaction, aux tests et sa compilation de milliers de pages de documentation me permettant d'affiner ma compréhension dans les domaines que je maitrise moins. Bah oui j'ai (osons le grot mot) **travaillé et appris** avec cet IA Générative et me suis pas contenter de mettre ici un truc bugger récupéré en 2 click et trois questions bancales et c'est pas de tout repos :grinning:.
 
