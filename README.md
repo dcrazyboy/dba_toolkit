@@ -98,6 +98,12 @@ Ce projet est sous licence MIT – voir le fichier **[MIT](LICENSE)** pour plus 
 - **Ne jamais versionner** des mots de passe ou des informations sensibles (utilise .env ou .gitignore).
 - **Pour VScodium**
   - Utilisez le [script de validation](tools/vscodium/scripts/validate_codium.sh) pour vérifier les prérequis avant l’installation.
+    - exemple
+```bash
+cd tools/vscodium/scripts/
+chmod +x validate_codium.sh
+./validate_codium.sh "/mnt/d"  # Exemple : "/mnt/d" pour un disque D: sous WSL
+```
   - Préférez les chemins natifs de WSL (~/projects/) aux chemins montés (/mnt/) pour de meilleures performances.
 - **Pour les bases de données** (à venir)
   - Les scripts supposent que la base soit correctement configurée sur votre machine.
