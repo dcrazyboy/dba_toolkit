@@ -11,6 +11,7 @@
    1. [⚠️ Statut Actuel](#️-statut-actuel)
    1. [📌 Prérequis](#-prérequis)
    1. [🚀 Installation / utilisation](#-installation--utilisation)
+      1. [Pour commencer :](#pour-commencer-)
    1. [🤝 Contribuer](#-contribuer)
    1. [📜 Licence](#-licence)
    1. [⚠️ Bonnes pratiques IMPORTANTES](#️-bonnes-pratiques-importantes)
@@ -24,55 +25,59 @@
 dba_toolkit/
 │
 ├── tools/
-│   └── vscodium/              # Configuration VSCodium (portable)
-│       ├── docs/
-│       ├── config/
-│       └── scripts/
+│   └── vscodium/           # Configuration portable de VSCodium (documentation complète disponible)
+│       ├── docs/           # Guides d'installation et d'utilisation
+│       ├── config/         # Fichiers de configuration (settings.json, etc.)
+│       └── scripts/        # Scripts d'automatisation et de validation
 │
-├── postgres/
-│   ├── scripts/
-│   │   ├── backup/
-│   │   ├── monitoring/
-│   │   └── maintenance/
-│   ├── config/
-│   ├── docs/
-│   └── sql/
+├── postgres/               # À venir : Scripts PostgreSQL (backup, monitoring, etc.)
 │
 ├── .gitignore
-├── README.md                  # Description globale du dépôt
+├── README.md               # Ce fichier
 └── LICENSE
 ```
 
 ## ⚠️ Statut Actuel
-- **Phase** : Développement initial (commencée).
+- **Phase** : Développement actif.
 - **Disponible** :
-  - Structure de base.
-  - Ajout de Vscodium dans Tools
+  - **VSCodium** : Configuration portable et multi-environnement (Linux/WSL/Windows).
+    - → [Documentation complète](tools/vscodium/docs/vscodium_tout_terrain.md)
+    - → [Script de validation](tools/vscodium/scripts/validate_codium.sh)
+  - Structure de base pour les futurs outils (PostgreSQL, etc.).
 - **À venir** :
-  - Tous le reste
+  - Scripts PostgreSQL (backup, monitoring, maintenance).
+  - Support pour d’autres SGBD (MySQL, MongoDB).
+
 
 ---
 
 
 ## 📌 Prérequis
-- **Coté système**
-  - Un pc avec une distro linux ou SWL installé sur Windows
-- **Coté développement**
-  - Votre IDE préféré ou **Codium** (voir tools/vscodium si besoin)
-  - Bash : (version 4+).
-- **Coté bases de données** (à venir)
-  - **PostgreSQL** (version 10+ recommandée).
-  - **Outils PostgreSQL** :
+- **Côté système** :
+  - Un PC avec une distribution Linux ou WSL (Windows Subsystem for Linux).
+  - Un disque externe ou une clé USB (pour la portabilité, optionnel).
+- **Côté développement** :
+  - Git (pour cloner le dépôt et gérer les workspaces).
+  - Bash (version 4+).
+  - **VSCodium** (recommandé pour une expérience optimale, voir `tools/vscodium/`).
+- **Côté bases de données** (à venir) :
+  - PostgreSQL (version 10+ recommandée).
   
 
 ## 🚀 Installation / utilisation
-Vous pouvez : 
-- **Cloner le dépôt** et travailler en autonimie sur cette base
+### Pour commencer :
+1. **Cloner le dépôt** :
   ```bash
-    git clone https://github.com/dcrazyboy/postgres_dba_toolkit.git
-    cd dba_toolkit
+   git clone https://github.com/dcrazyboy/dba_toolkit.git
+   cd dba_toolkit
   ```
-- **Explorer, nourrir votre réfflecxion et picorer**
+2. **Explorer les outils disponibles :**
+
+   - VSCodium : Suivez la [documentation](tools/vscodium/docs/vscodium_tout_terrain.md) pour une installation portable.
+   - PostgreSQL : À venir (dossier postgres/ en développement).
+
+3. **Contribuer** : Voir la section Contribuer pour ajouter des outils ou améliorer la documentation.
+
 
 ## 🤝 Contribuer
 Les contributions sont les bienvenues ! Voici comment participer :
@@ -81,7 +86,7 @@ Les contributions sont les bienvenues ! Voici comment participer :
 - Créez une branche pour votre fonctionnalité (git checkout -b ma-fonctionnalite).
 - Validez vos modifications (git commit -am 'Ajout de ma fonctionnalité').
 - Remontez la branche (git push origin ma-fonctionnalite).
-- Ouvrez une Pull Request.
+- Ouvrez une [Pull Request](https://github.com/dcrazyboy/dba_toolkit/pulls).
 
 
 ## 📜 Licence
@@ -89,13 +94,17 @@ Ce projet est sous licence MIT – voir le fichier **[MIT](LICENSE)** pour plus 
 
 ## ⚠️ Bonnes pratiques IMPORTANTES
 
-- Testez toujours les scripts dans un environnement de staging avant de les utiliser en production.
-- Ne jamais versionner des mots de passe ou des informations sensibles (utilise .env).
-- Les scripts de BDD supposent que la base soit correctement configurée sur votre machine.
-- Si vous décidez de contribuer et partagez des exemples, penez a anonymisez
+- **Testez toujours** les scripts dans un environnement de staging avant de les utiliser en production.
+- **Ne jamais versionner** des mots de passe ou des informations sensibles (utilise .env ou .gitignore).
+- **Pour VScodium**
+  - Utilisez le [script de validation](tools/vscodium/scripts/validate_codium.sh) pour vérifier les prérequis avant l’installation.
+  - Préférez les chemins natifs de WSL (~/projects/) aux chemins montés (/mnt/) pour de meilleures performances.
+- **Pour les bases de données** (à venir)
+  - Les scripts supposent que la base soit correctement configurée sur votre machine.
+  - Anonymisez toujours les données avant de partager des exemples.
 
 ## 📬 Contact
-Pour toute question ou suggestion, ouvre une issue ou contacte-moi via GitHub.
+Pour toute question ou suggestion, [ouvrez une issue](https://github.com/dcrazyboy/dba_toolkit/issues) ou contactez-moi via GitHub.
 
 ## :pray: Remerciements
 
