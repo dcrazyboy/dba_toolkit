@@ -1,0 +1,24 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "git.openRepositoryInParentFolders": "never",
+    "gitlens.codeLens.enabled": true,
+    "[sql]": {
+      "editor.defaultFormatter": "redhat.vscode-postgres"
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "timonwong.shellcheck",
+      "eamodio.gitlens",
+      "alefragnani.project-manager",
+      "bierner.emojisense",
+      "yzane.markdown-all-in-one",
+      "ckolkman.vscode-postgres" // Spécifique à PostgreSQL
+    ]
+  }
+}

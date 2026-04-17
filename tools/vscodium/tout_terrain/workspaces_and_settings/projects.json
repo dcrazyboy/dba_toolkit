@@ -1,0 +1,30 @@
+[
+	{
+		"name": "vscodium / <repo_col>",
+		"rootPath": "<racine_ext>/<path_ext>/<repo_col>",
+		"paths": [],
+		"tags": [],
+		"enabled": true
+	},
+	{
+		"name": "vscodium / <repo_pub>",
+		"rootPath": "<racine_ext>/<path_ext>/<repo_pub>",
+		"paths": [],
+		"tags": [],
+		"enabled": true
+	},
+	{
+		"name": "vscodium / <repo_priv>",
+		"rootPath": "<racine_ext>/<path_ext>/<repo_priv>",
+		"paths": [],
+		"tags": [],
+		"enabled": true
+	},
+	{
+		"name": "vscodium",
+		"rootPath": "<racine_ext>/<path_ext>",
+		"paths": [],
+		"tags": [],
+		"enabled": true
+	}
+]

@@ -43,14 +43,27 @@
   "markdown.extension.toc.orderedList": true,
   // Formatage automatique
   "markdown.extension.orderedList.marker": "one",
+  // suppressiondes permalink ajoute dans le code afficher
+  "markdown.extension.toc.permalink": false,
+  "markdown.extension.toc.updateOnSave": true,
   // Prévisualisation
   "markdown.extension.preview.autoShowPreviewToSide": true,
   // Autres paramètres utiles
   "markdown.extension.completion.enabled": true,
   // Project Manager
   "projectManager.sortList": "Name",
+  "projectManager.autoDetect.included": [
+    "/<racine_ext>/<path_ext>/<repo_priv>",
+    "/<racine_ext>/<path_ext>/<repo_col>",
+    "/<racine_ext>/<path_ext>/<repo_pub>"
+  ],
+"projectManager.autoDetect.excluded": [
+    "**/node_modules",
+    "**/.git"
+  ],
   "projectManager.git.baseFolders": [
-    "<racine_ext>/<path_ext>"
+    "/<racine_ext>/<path_ext>/",
+    "/<racine_int>/dev/vscodium"
   ],
   // ShellCheck
   "shellcheck.ignorePatterns": {

@@ -1,8 +1,8 @@
 # Installation VSCodium tout terrain
 1. [Installation VSCodium tout terrain](#installation-vscodium-tout-terrain)
-   1. [:thinking: But](#thinking-but)
-   1. [:wrench: Prérequis](#wrench-prérequis)
-   1. [:construction\_worker\_man: Installer VSCodium](#construction_worker_man-installer-vscodium)
+   1. [🤔 But](#-but)
+   1. [🔧 Prérequis](#-prérequis)
+   1. [👷 Installer VSCodium](#-installer-vscodium)
       1. [Sur Red Hat family (Red Hat, Fedora, Rocky, CentOS, Almalinux, ...)](#sur-red-hat-family-red-hat-fedora-rocky-centos-almalinux-)
       1. [Sur openSUSE family (Tumbleweed, Leap, ...)](#sur-opensuse-family-tumbleweed-leap-)
       1. [Sur Debian family (Debian, Ubuntu, Mint, ...)](#sur-debian-family-debian-ubuntu-mint-)
@@ -11,10 +11,10 @@
          1. [Installer une distribution Linux](#installer-une-distribution-linux)
          1. [Points à vérifier](#points-à-vérifier)
          1. [Installation de Codium](#installation-de-codium)
-   1. [:construction: L'espace de travail](#construction-lespace-de-travail)
+   1. [🏗️ L'espace de travail](#️-lespace-de-travail)
       1. [Arborescence](#arborescence)
-         1. [:file\_folder:  Structure de la partie externe.](#file_folder--structure-de-la-partie-externe)
-         1. [:file\_folder:  Structure de la partie interne.](#file_folder--structure-de-la-partie-interne)
+         1. [📁  Structure de la partie externe.](#--structure-de-la-partie-externe)
+         1. [📁  Structure de la partie interne.](#--structure-de-la-partie-interne)
          1. [Initialisation](#initialisation)
          1. [Installations complémentaires](#installations-complémentaires)
             1. [Installer les extensions](#installer-les-extensions)
@@ -43,13 +43,13 @@
       1. [A propos de project manager](#a-propos-de-project-manager)
          1. [Comment bascule d'un projet à un autre ?](#comment-bascule-dun-projet-à-un-autre-)
    1. [🔍 P'tit Bonus : Script de Validation](#-ptit-bonus--script-de-validation)
-   1. [:pray: Remerciement](#pray-remerciement)
+   1. [🙏 Remerciement](#-remerciement)
 
-## :thinking: But
+## 🤔 But
 
 Voici ma manière d'installer et organiser **VSCodium** afin de pouvoir transporter mes projets de manière un minimum sécurisé et compatible avec un environnement hétérogène
-Ce document n'est aps exhaustif mais je l'espère tout public et oui je l'ai travaillé avec le :cat: venteux (aka Lechat - mistral)
-Les :bearded_person: à long barbe peuvent y trouver une inspiration, un point de vue, ceux à la barbe naissante un HOW TO pour apprendre
+Ce document n'est aps exhaustif mais je l'espère tout public et oui je l'ai travaillé avec le 🐱 venteux (aka Lechat - mistral)
+Les 🧔 à long barbe peuvent y trouver une inspiration, un point de vue, ceux à la barbe naissante un HOW TO pour apprendre
 
 La version de **VSCodium** utilisée est : 
 ```
@@ -63,7 +63,7 @@ Node.js: 22.19.0
 V8: 13.8.258.32-electron.0
 ```
 
-## :wrench: Prérequis
+## 🔧 Prérequis
 
 - 1 pc (portable ou fixe)
 - 1 disque externe ou pourquoi pas un clef usb formatée pour Linux
@@ -72,7 +72,7 @@ V8: 13.8.258.32-electron.0
   - accès au terminal
   - votre éditeur préféré (vim, nano, emacs,...)
 
-## :construction_worker_man: Installer VSCodium
+## 👷 Installer VSCodium
 Vous pouvez bien sûr utilise Snap, mais je préfère la méthode :hammer_and_wrench: 
 
 ### Sur Red Hat family (Red Hat, Fedora, Rocky, CentOS, Almalinux, ...)
@@ -153,8 +153,8 @@ ls /mnt/<disque windows>
 touch /mnt/c/Users/<user windows>/test_wsl.txt
 # vérifier que le fichier est bien visible et accessible depuis l'explorateur windows
 ```
-- :warning: Les fichiers situés dans /mnt/< disque >/ peuvent être plus lents que ceux dans le système de fichiers natif de WSL (~/).
-- :warning: Pour de meilleurs performances, stockez vos projets dans ~/projects/ et utilisez /mnt/< disque > uniquement pour les fichiers partagés avec Windows.
+- ⚠️ Les fichiers situés dans /mnt/< disque >/ peuvent être plus lents que ceux dans le système de fichiers natif de WSL (~/).
+- ⚠️ Pour de meilleurs performances, stockez vos projets dans ~/projects/ et utilisez /mnt/< disque > uniquement pour les fichiers partagés avec Windows.
 - L'installation finalisé, vous pouvez sauvegarder/restaurer votre distribution pour gagner un peu de place et libérer de la mémoire et de la CPU en utilisant Powershell
 ```Powershell
 # Sauvegarde
@@ -173,24 +173,24 @@ Il va y avoir une double installation à faire
 
 Une fois la double installation faite (WSL Linux et Windows), le reste se fera dans WSL comme avec un Linux normal
 
-## :construction: L'espace de travail
+## 🏗️ L'espace de travail
 
 Choix : Installation de l'espace de travail sur disque externe ou clef usb (petits projets ou pour demo/partage)
 
 ### Arborescence
-#### :file_folder:  Structure de la partie externe.
+#### 📁  Structure de la partie externe.
 ```
 <racine_ext>/
   └── <path_ext>/
-        ├── <repo_priv>/        # :lock: Projet privé (GitHub privé)
+        ├── <repo_priv>/        # 🔒 Projet privé (GitHub privé)
         |      └── <repo_priv>.code-workspace
-        ├── <repo_col>/         # :handshake:hake Projet collaboratif (GitHub en bascule privé/public)
+        ├── <repo_col>/         # 🔏 Projet collaboratif (GitHub en bascule privé/public)
         |      └── <repo_col>.code-workspace
-        ├── <repo_pub/          # :earth_africa: Projet public (GitHub public)
+        ├── <repo_pub/          # 🗺️ Projet public (GitHub public)
         |      └── <repo_pub>.code-workspace
         └── README.md           # Ce fichier
 ```
-#### :file_folder:  Structure de la partie interne.
+#### 📁  Structure de la partie interne.
 Ceci est la partie installation par défaut si le disque externe n'est pas présent
 ```
 <racine_int>/
@@ -248,17 +248,18 @@ codium --install-extension eamodio.gitlens
 codium --install-extension alefragnani.project-manager
 codium --install-extension yzhang.markdown-all-in-one
 codium --install-extension timonwong.shellcheck
+codium --install-extension bierner.emojisense
 ```
 ##### Installer les fichiers de configuration
 Récupérer sur github les fichiers scripts dans dba_toolkit/tool/vscodium/scripts et les installer
 ```bash
 # Téléchargement des fichiers de workspace codium pour chaque repo (ne pas oublie de mettre les bonnes valeurs dans la commande pour <repo_xxx> )
-wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/workspaces_and_settings/<repo_xxx>.code-workspace -O <racine_ext>/<path_ext>/<repo_xxx>/<repo_xxx>.code-workspace
+wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/tout_terrain/workspaces_and_settings/<repo_xxx>.code-workspace -O <racine_ext>/<path_ext>/<repo_xxx>/<repo_xxx>.code-workspace
 # Téléchargement des fichiers de configuration codium
-wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/workspaces_and_settings/settings.json -O ~/scripts/settings.json
+wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/tout_terrain/workspaces_and_settings/settings.json -O ~/scripts/settings.json
 wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/workspaces_and_settings/projects.json -O ~/scripts/projects.json
 # Téléchargement des fichiers de scripts
-wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/scripts/launch_codium.sh -O ~/scripts/launch_codium.sh
+wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/tout_terrain/scripts/launch_codium.sh -O ~/scripts/launch_codium.sh
 ```
 Avec votre éditeur préféré dans les fichiers récupérés sur **~/scripts/**, remplacer < racine_ext >, < path_ext > et < repo_xxx > par vos propres valeurs
 
@@ -413,7 +414,7 @@ Pour ajouter des **extensions spécifiques** à un projet, édite son fichier `.
 ### A propos de project manager
 #### Comment bascule d'un projet à un autre ?
 
-![alt text](use_project_manager.png)
+![alt text](/vscodium/assets/use_project_manager.png)
 
 1. Dans la side bar, choisit Project Manager
 2. Dans les favoris choisir le projet global (vscodium) ou le sous-projet que l'on veux utiliser 
@@ -421,7 +422,7 @@ Pour ajouter des **extensions spécifiques** à un projet, édite son fichier `.
 ## 🔍 P'tit Bonus : Script de Validation
 Pour vérifier que votre environnement est prêt, exécutez :
 ```bash
-wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/scripts/validate_vscodium.sh
+wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/tout_terrain/scripts/validate_vscodium.sh
 chmod +x validate_vscodium.sh
 ./validate_vscodium.sh "< Disque Externe >"
 ```
@@ -430,8 +431,8 @@ Exemple d'utilisation :
 ./validate_codium.sh "/mnt/d"  # Remplacez "/mnt/d" par votre chemin de disque externe
 ```
 
-## :pray: Remerciement
+## 🙏 Remerciement
 - A tous ceux qui maintiennent et mettent a disposition **Codium**
 - A tous ceux qui maintiennent et mettent a disposition les extensions d e **Codium** qui m'aident bien
-- Au échanges avec le :cat: de mistral, parfois houleux car comme tous les :cat: il a tendance a changer de :yarn: sans prévenir.... 😛   
+- Au échanges avec le 🐱 de mistral, parfois houleux car comme tous les 🐱 il a tendance a changer de 🧶 sans prévenir.... 😆   
 

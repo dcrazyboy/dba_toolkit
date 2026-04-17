@@ -16,7 +16,7 @@
    1. [📜 Licence](#-licence)
    1. [⚠️ Bonnes pratiques IMPORTANTES](#️-bonnes-pratiques-importantes)
    1. [📬 Contact](#-contact)
-   1. [:pray: Remerciements](#pray-remerciements)
+   1. [🙏 Remerciements](#-remerciements)
 
 ---
 
@@ -41,8 +41,9 @@ dba_toolkit/
 - **Phase** : Développement actif.
 - **Disponible** :
   - **VSCodium** : Configuration portable et multi-environnement (Linux/WSL/Windows).
-    - → [Documentation complète](tools/vscodium/docs/vscodium_tout_terrain.md)
-    - → [Script de validation](tools/vscodium/scripts/validate_codium.sh)
+    - → [Documentation complète](tools/vscodium/tout_terrain/docs/vscodium_tout_terrain.md)
+    - → [Script de validation](tools/vscodium/tout_terrain/scripts/validate_codium.sh)
+  
   - Structure de base pour les futurs outils (PostgreSQL, etc.).
 - **À venir** :
   - Scripts PostgreSQL (backup, monitoring, maintenance).
@@ -73,7 +74,7 @@ dba_toolkit/
   ```
 2. **Explorer les outils disponibles :**
 
-   - VSCodium : Suivez la [documentation](tools/vscodium/docs/vscodium_tout_terrain.md) pour une installation portable.
+   - VSCodium : Suivez la [documentation](tools/vscodium/tout_terrain/docs/vscodium_tout_terrain.md) pour une installation portable.
    - PostgreSQL : À venir (dossier postgres/ en développement).
 
 3. **Contribuer** : Voir la section Contribuer pour ajouter des outils ou améliorer la documentation.
@@ -112,10 +113,10 @@ chmod +x validate_codium.sh
 ## 📬 Contact
 Pour toute question ou suggestion, [ouvrez une issue](https://github.com/dcrazyboy/dba_toolkit/issues) ou contactez-moi via GitHub.
 
-## :pray: Remerciements
+## 🙏 Remerciements
 
 - Aux mainteneurs de VSCodium et de ses extensions.
 - À la communauté open-source pour les outils utilisés (Git, PostgreSQL, etc.).
 - À la communauté Github qui a été une source d'inspiration par le partage où j'espère apporte ma Pierre
-- Au Matou 🐱 (aka Lechat de Mistral AI) pour l’aide à la rédaction, aux tests et sa compilation de milliers de pages de documentation me permettant d'affiner ma compréhension dans les domaines que je maitrise moins. Bah oui j'ai (osons le grot mot) **travaillé et appris** avec cet IA Générative et me suis pas contenter de mettre ici un truc bugger récupéré en 2 click et trois questions bancales et c'est pas de tout repos :grinning:.
+- Au Matou 🐱 (aka Lechat de Mistral AI) pour l’aide à la rédaction, aux tests et sa compilation de milliers de pages de documentation me permettant d'affiner ma compréhension dans les domaines que je maitrise moins. Bah oui j'ai (osons le grot mot) **travaillé et appris** avec cet IA Générative et me suis pas contenter de mettre ici un truc bugger récupéré en 2 click et trois questions bancales et c'est pas de tout repos 😀.
 

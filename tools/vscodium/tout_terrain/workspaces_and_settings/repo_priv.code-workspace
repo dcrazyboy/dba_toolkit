@@ -1,0 +1,21 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "git.openRepositoryInParentFolders": "never",
+    "gitlens.codeLens.enabled": true,
+    "editor.formatOnSave": true
+  },
+  "extensions": {
+    "recommendations": [
+      "timonwong.shellcheck",
+      "eamodio.gitlens",
+      "alefragnani.project-manager",
+      "bierner.emojisense",
+      "yzane.markdown-all-in-one"
+    ]
+  }
+}

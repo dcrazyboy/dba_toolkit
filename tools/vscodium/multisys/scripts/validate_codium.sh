@@ -7,7 +7,7 @@ flag_git=true
 flag_distro=true
 flag_codium=true
 flag_github=true
-LIST_EXTENSIONS=("eamodio.gitlens" "alefragnani.project-manager" "yzhang.markdown-all-in-one" "timonwong.shellcheck")
+LIST_EXTENSIONS=("bierner.emojisense" "eamodio.gitlens" "alefragnani.project-manager" "yzhang.markdown-all-in-one" "timonwong.shellcheck")
 ID=
 RACINE_EXT=
 # =============================================
