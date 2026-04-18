@@ -40,8 +40,9 @@ dba_toolkit/
 ## ⚠️ Statut Actuel
 - **Phase** : Développement actif.
 - **Disponible** :
-  - **VSCodium** : Configuration portable et multi-environnement (Linux/WSL/Windows).
-    - → [Documentation complète](tools/vscodium/tout_terrain/docs/vscodium_tout_terrain.md)
+  - **VSCodium** : 
+    - Configuration portable et multi-environnement (Linux/WSL/Windows). [ici](tools/vscodium/tout_terrain/)
+    - Configuration portable sur PC multi-OS (Linux/WSL/Windows). [ici](tools/vscodium/multisys)
     - → [Script de validation](tools/vscodium/tout_terrain/scripts/validate_codium.sh)
   
   - Structure de base pour les futurs outils (PostgreSQL, etc.).
@@ -62,7 +63,7 @@ dba_toolkit/
   - Bash (version 4+).
   - **VSCodium** (recommandé pour une expérience optimale, voir `tools/vscodium/`).
 - **Côté bases de données** (à venir) :
-  - PostgreSQL (version 10+ recommandée).
+  - PostgreSQL (version 15+ recommandée).
   
 
 ## 🚀 Installation / utilisation
@@ -71,11 +72,8 @@ dba_toolkit/
   ```bash
    git clone https://github.com/dcrazyboy/dba_toolkit.git
    cd dba_toolkit
-  ```
+```
 2. **Explorer les outils disponibles :**
-
-   - VSCodium : Suivez la [documentation](tools/vscodium/tout_terrain/docs/vscodium_tout_terrain.md) pour une installation portable.
-   - PostgreSQL : À venir (dossier postgres/ en développement).
 
 3. **Contribuer** : Voir la section Contribuer pour ajouter des outils ou améliorer la documentation.
 
