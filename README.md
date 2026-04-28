@@ -7,7 +7,7 @@
 ## 📋 Table des Matières
 1. [DBA Toolkit (En Développement)](#dba-toolkit-en-développement)
    1. [📋 Table des Matières](#-table-des-matières)
-   1. [📂 Structure du Dépôt](#-structure-du-dépôt)
+   1. [📂 Structure de base du Dépôt](#-structure-de-base-du-dépôt)
    1. [⚠️ Statut Actuel](#️-statut-actuel)
    1. [📌 Prérequis](#-prérequis)
    1. [🚀 Installation / utilisation](#-installation--utilisation)
@@ -20,15 +20,12 @@
 
 ---
 
-## 📂 Structure du Dépôt
+## 📂 Structure de base du Dépôt
 ```
 dba_toolkit/
 │
 ├── tools/
-│   └── vscodium/           # Configuration portable de VSCodium (documentation complète disponible)
-│       ├── docs/           # Guides d'installation et d'utilisation
-│       ├── config/         # Fichiers de configuration (settings.json, etc.)
-│       └── scripts/        # Scripts d'automatisation et de validation
+│   └── vscodium/           # Outils de dévelopement. Une version libre de surveillance de VSCode de microsoft
 │
 ├── postgres/               # À venir : Scripts PostgreSQL (backup, monitoring, etc.)
 │
@@ -40,12 +37,11 @@ dba_toolkit/
 ## ⚠️ Statut Actuel
 - **Phase** : Développement actif.
 - **Disponible** :
-  - **VSCodium** : 
-    - Configuration portable et multi-environnement (Linux/WSL/Windows). [ici](tools/vscodium/tout_terrain/)
-    - Configuration portable sur PC multi-OS (Linux/WSL/Windows). [ici](tools/vscodium/multisys)
-    - → [Script de validation](tools/vscodium/tout_terrain/scripts/validate_codium.sh)
+  - **[Tools](tools/README.md)** : un ensemble d'outils que j'utilise et comment je les ai installés, partagés
+    - **[VSCodium](tools/vscodium/README.md)** : outils de développement, je vous propsoe deux méthodes s'installation en mode portable 
+      - Mode tout terrains partageable entre plusieurs PC d'OS différents  (Linux/WSL/Windows)
+      - Mode tout terrain partageable sur un PC multi OS (linux)
   
-  - Structure de base pour les futurs outils (PostgreSQL, etc.).
 - **À venir** :
   - Scripts PostgreSQL (backup, monitoring, maintenance).
   - Support pour d’autres SGBD (MySQL, MongoDB).
@@ -116,5 +112,5 @@ Pour toute question ou suggestion, [ouvrez une issue](https://github.com/dcrazyb
 - Aux mainteneurs de VSCodium et de ses extensions.
 - À la communauté open-source pour les outils utilisés (Git, PostgreSQL, etc.).
 - À la communauté Github qui a été une source d'inspiration par le partage où j'espère apporte ma Pierre
-- Au Matou 🐱 (aka Lechat de Mistral AI) pour l’aide à la rédaction, aux tests et sa compilation de milliers de pages de documentation me permettant d'affiner ma compréhension dans les domaines que je maitrise moins. Bah oui j'ai (osons le grot mot) **travaillé et appris** avec cet IA Générative et me suis pas contenter de mettre ici un truc bugger récupéré en 2 click et trois questions bancales et c'est pas de tout repos 😀.
+- Au Matou 🐱 (aka Lechat de Mistral AI) pour l’aide à la rédaction, aux tests et sa compilation de milliers de pages de documentation me permettant d'affiner ma compréhension dans les domaines que je maitrise moins. Bah oui j'ai (osons le gros mot) **travaillé et appris** avec cet IA Générative et me suis pas contenter de mettre ici un truc bugger récupéré en 2 click et trois questions bancales et c'est pas de tout repos 😀.
 
