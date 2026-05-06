@@ -1,5 +1,5 @@
-# Installation VSCodium tout terrain
-1. [Installation VSCodium tout terrain](#installation-vscodium-tout-terrain)
+# Installation VSCodium multi systeme
+1. [Installation VSCodium multi systeme](#installation-vscodium-multi-systeme)
    1. [🤔 But](#-but)
    1. [🔧 Prérequis](#-prérequis)
    1. [👷 Installer VSCodium](#-installer-vscodium)
