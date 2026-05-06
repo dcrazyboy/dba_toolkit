@@ -95,8 +95,8 @@ Ah ! j'oubliais, comme tout projet il évolue et avec le temps je me suis rendu 
 **La réposse est  : OUI**
 
 Vous trouverez : 
-- La documentation d'origine [**Tout Terrain**](/vscodium/tout_terrain/docs/vscodium_tout_terrain.md)
-- La documentation de l'alternative pour PC [**Multi Système**](/vscodium/multisys/docs/vscodium_multisys.md)
+- La documentation d'origine [**Tout Terrain**](tout_terrain/README.md)
+- La documentation de l'alternative pour PC [**Multi Système**](multisys/README.md)
   
 
 
@@ -107,7 +107,7 @@ Vous trouverez :
 - Pour ajouter des **extensions spécifiques** à un projet, édite son fichier `.code-workspace`.
 - Comment bascule d'un projet à un autre ?
 
-![alt text](/tools/vscodium/tout_terrain/docs/use_project_manager.png)
+![alt text](assets/use_project_manager.png)
 
 1. Dans la side bar, choisit Project Manager
 2. Dans les favoris choisir le projet global (vscodium) ou le sous-projet que l'on veux utiliser 
