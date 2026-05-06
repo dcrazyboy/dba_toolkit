@@ -414,7 +414,7 @@ Pour ajouter des **extensions spécifiques** à un projet, édite son fichier `.
 ### A propos de project manager
 #### Comment bascule d'un projet à un autre ?
 
-![alt text](/vscodium/assets/use_project_manager.png)
+![alt text](../assets/use_project_manager.png)
 
 1. Dans la side bar, choisit Project Manager
 2. Dans les favoris choisir le projet global (vscodium) ou le sous-projet que l'on veux utiliser 

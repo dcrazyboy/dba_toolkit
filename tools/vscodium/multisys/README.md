@@ -288,12 +288,12 @@ codium --install-extension bierner.emojisense --extensions-dir <racine_int>/dev/
 Récupérer sur github les fichiers scripts dans dba_toolkit/tool/vscodium/scripts et les installer
 ```bash
 # Téléchargement des fichiers de workspace codium pour chaque repo (ne pas oublie de mettre les bonnes valeurs dans la commande pour <repo_xxx> )
-wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/multi/workspaces_and_settings/<repo_xxx>.code-workspace -O <racine_ext>/<path_ext>/<repo_xxx>/<repo_xxx>.code-workspace
+wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/multisys/workspaces_and_settings/<repo_xxx>.code-workspace -O <racine_ext>/<path_ext>/<repo_xxx>/<repo_xxx>.code-workspace
 # Téléchargement des fichiers de configuration codium
-wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/multi/workspaces_and_settings/settings.json -O <racine_int>/dev/vscodium/.config/VSCodium/User/settings.json
-wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/multi/workspaces_and_settings/projects.json -O <racine_int>/dev/vscodium/.config/VSCodium/User/projects.json
+wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/multisys/workspaces_and_settings/settings.json -O <racine_int>/dev/vscodium/.config/VSCodium/User/settings.json
+wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/multisys/workspaces_and_settings/projects.json -O <racine_int>/dev/vscodium/.config/VSCodium/User/projects.json
 # Téléchargement des fichiers de scripts
-wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodiummulti//scripts/launch_codium.sh -O <racine_int>/dev/vscodium/scripts/launch_codium.sh
+wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/multisys//scripts/launch_codium.sh -O <racine_int>/dev/vscodium/scripts/launch_codium.sh
 ```
 Avec votre éditeur préféré dans les fichiers récupérés sur **<racine_int>/dev/vscodium/scripts/** et **<racine_int>/dev/vscodium/.config/VSCodium/User**, remplacer < racine_int >,< racine_ext >, < path_ext > et < repo_xxx > par vos propres valeurs
 
@@ -467,7 +467,7 @@ Pour ajouter des **extensions spécifiques** à un projet, édite son fichier `.
 ### A propos de project manager
 #### Comment bascule d'un projet à un autre ?
 
-![alt text](/vscodium/assets/use_project_manager.png)
+![alt text](../assets/use_project_manager.png)
 
 1. Dans la side bar, choisit Project Manager
 2. Dans les favoris choisir le projet global (vscodium) ou le sous-projet que l'on veux utiliser 
