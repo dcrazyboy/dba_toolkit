@@ -1,5 +1,5 @@
-# Installation VSCodium tout terrain
-1. [Installation VSCodium tout terrain](#installation-vscodium-tout-terrain)
+# Installation VSCodium multi-systeme
+1. [Installation VSCodium multi-systeme](#installation-vscodium-multi-systeme)
    1. [🤔 But](#-but)
    1. [🔧 Prérequis](#-prérequis)
    1. [👷 Installer VSCodium](#-installer-vscodium)
@@ -11,10 +11,11 @@
          1. [Installer une distribution Linux](#installer-une-distribution-linux)
          1. [Points à vérifier](#points-à-vérifier)
          1. [Installation de Codium](#installation-de-codium)
-   1. [🏗️ L'espace de travail](#️-lespace-de-travail)
+   1. [🏗️ L'espace de travail pour le premier sytème installé](#️-lespace-de-travail-pour-le-premier-sytème-installé)
       1. [Arborescence](#arborescence)
          1. [📁  Structure de la partie externe.](#--structure-de-la-partie-externe)
          1. [📁  Structure de la partie interne.](#--structure-de-la-partie-interne)
+      1. [⚠️ Rappel pour mémoire](#️-rappel-pour-mémoire)
          1. [Initialisation](#initialisation)
          1. [Installations complémentaires](#installations-complémentaires)
             1. [Installer les extensions](#installer-les-extensions)
@@ -22,6 +23,7 @@
             1. [Mise à jour du gestionnaire d'application](#mise-à-jour-du-gestionnaire-dapplication)
                1. [GNOME](#gnome)
          1. [Test](#test)
+   1. [🏗️ L'espace de travail pour les systèmes additionnels](#️-lespace-de-travail-pour-les-systèmes-additionnels)
    1. [📌 Notes](#-notes)
       1. [Paramétrage et shortcut](#paramétrage-et-shortcut)
          1. [Général](#général)
@@ -47,7 +49,11 @@
 
 ## 🤔 But
 
-Voici ma manière d'installer et organiser **VSCodium** afin de pouvoir transporter mes projets de manière un minimum sécurisé et compatible avec un environnement hétérogène
+Voici ma manière d'installer et organiser **VSCodium**.
+C'est une alternative a la version **Tout Terrain** : 
+- afin de pouvoir transporter mes projets de manière un minimum sécurisé et compatible avec un environnement hétérogène
+- Partage sur un pc **multi système** un environement centralisé utilisable quelque que soit le système démarré
+
 Ce document n'est aps exhaustif mais je l'espère tout public et oui je l'ai travaillé avec le 🐱 venteux (aka Lechat - mistral)
 Les 🧔 à long barbe peuvent y trouver une inspiration, un point de vue, ceux à la barbe naissante un HOW TO pour apprendre
 
@@ -65,15 +71,15 @@ V8: 13.8.258.32-electron.0
 
 ## 🔧 Prérequis
 
-- 1 pc (portable ou fixe)
+- 1 pc (portable ou fixe) avec 1 To de disque interne avec un point de montage partage entre les systèmes installés
 - 1 disque externe ou pourquoi pas un clef usb formatée pour Linux
-- git installe sur le PC
-- et bien sûr
+- et bien sûr sur chaque sytème installé
+  - git installé
   - accès au terminal
   - votre éditeur préféré (vim, nano, emacs,...)
 
 ## 👷 Installer VSCodium
-Vous pouvez bien sûr utilise Snap, mais je préfère la méthode :hammer_and_wrench: 
+Vous pouvez bien sûr utilise Snap, mais je préfère la méthode 🛠️ qui peut vous eviter quelques déboires en cas de mise à jour
 
 ### Sur Red Hat family (Red Hat, Fedora, Rocky, CentOS, Almalinux, ...)
 ```bash
@@ -173,9 +179,11 @@ Il va y avoir une double installation à faire
 
 Une fois la double installation faite (WSL Linux et Windows), le reste se fera dans WSL comme avec un Linux normal
 
-## 🏗️ L'espace de travail
+## 🏗️ L'espace de travail pour le premier sytème installé
 
-Choix : Installation de l'espace de travail sur disque externe ou clef usb (petits projets ou pour demo/partage)
+Choix : 
+- Installation de l'espace de travail sur disque externe ou clef usb (petits projets ou pour demo/partage)
+- Installation des fichiers de configuration et démarrage sur la partition partagée
 
 ### Arborescence
 #### 📁  Structure de la partie externe.
@@ -193,13 +201,29 @@ Choix : Installation de l'espace de travail sur disque externe ou clef usb (peti
 #### 📁  Structure de la partie interne.
 Ceci est la partie installation par défaut si le disque externe n'est pas présent
 ```
-<racine_int>/
-  └── <path_int>/
+<racine_int>/                      # 🔒 propriété du compte root
+  ├── dev/                         # 🔓 propriete du compte utilisateur commun
+  |     ├── vscodium/              # Installation commune de l'environnement VSCodium
+  |     |      ├── default_codium  # Dossier par default si le DD externe n'est pas detecté
+  |     |      ├── extensions      # Dossier d'installation des extensions
+  |     |      ├── scripts         # Dossier d'installation du script de lancement
+  |     |      └── .config         # Dossier de parametrage de VSCodium
+  |     |             ├── User     # Dossier d'installation des fichiers json privés
+  |     |             ├── /.../
+  |     |             └── /.../
+  |     ├── /.../
+  |     └── /.../
+  ├── /.../
+  └── /.../
 ```
-En général la < racine_int > est votre **$HOME** aussi noté **~**
+### ⚠️ Rappel pour mémoire
+
+- La <racine_int> est le point de montage de la partition de partage mis en place à l'installation du système, il apaprtient au compte **root**
+- Le premier dossier de <racine_int> DOIT appartenir au compte utilisateur, il importe donc de créer le même compte avec la même (UID / GID) sur tous les systèmes disponible 
+
 
 #### Initialisation
-On part du principe que sur vos different PC privés (fixe ou portable) vous avez toujours un compte de connexion identique (nonobstant le mot de passe bien sur)
+On part du principe que sur votre PC (fixe ou portable) vous avez toujours un compte de connexion identique (nonobstant le mot de passe bien sur) sur tous les sytèmes, même nom, même identifiant (UID / GID) pour éviter les problèmes de droit
 
 ```bash
 # 1) création des dossier du disque externe
@@ -227,47 +251,55 @@ chmod -R 750 <path_ext>/
 # ou
 chmod -R u+rwx,g+rx,o-rwx <path_ext>/
 
-#4) le dossier du disque interne
+#4) les dossier du disque partagé
 # se déplacer sur le $HOME
 cd ~
-# s'il n'existe pas créer un dossier scripts
-mkdir -p scripts
-# s'il n'existe pas créer le dossier de config personnalisé
-mkdir -p .config
-mkdir -p .config/VSCodium
-mkdir -p .config/VSCodium/User
-# s'il n'existe pas créer le dossier par défaut pour VSCodium
-mkdir -p default_codium
+# 4) Créer le dossier avec les droits
+sudo mkdir -p <racine_int>/dev
+sudo chown $USER:$USER <racine_int>/dev
+sudo chmod 750 <racine_int>/dev
+# ou
+sudo chmod -R u+rwx,g+rx,o-rwx <racine_int>/dev
+
+# 5) Vérifier
+ls -ld <racine_int>/dev
+
+# 6) Continuer la configuration
+mkdir -p <racine_int>/dev/vscodium
+mkdir -p <racine_int>/dev/vscodium/scripts
+mkdir -p <racine_int>/dev/vscodium/.config/VSCodium/User
+mkdir -p <racine_int>/dev/vscodium/extensions
+
 ```
 
 #### Installations complémentaires
 ##### Installer les extensions
 ```bash
 # Installation des extensions
-codium --install-extension eamodio.gitlens
-codium --install-extension alefragnani.project-manager
-codium --install-extension yzhang.markdown-all-in-one
-codium --install-extension timonwong.shellcheck
-codium --install-extension bierner.emojisense
+codium --install-extension eamodio.gitlens --extensions-dir <racine_int>/dev/vscodium/extensions
+codium --install-extension alefragnani.project-manager --extensions-dir <racine_int>/dev/vscodium/extensions
+codium --install-extension yzhang.markdown-all-in-one --extensions-dir <racine_int>/dev/vscodium/extensions
+codium --install-extension timonwong.shellcheck --extensions-dir <racine_int>/dev/vscodium/extensions
+codium --install-extension bierner.emojisense --extensions-dir <racine_int>/dev/vscodium/extensions
+
+
 ```
 ##### Installer les fichiers de configuration
 Récupérer sur github les fichiers scripts dans dba_toolkit/tool/vscodium/scripts et les installer
 ```bash
 # Téléchargement des fichiers de workspace codium pour chaque repo (ne pas oublie de mettre les bonnes valeurs dans la commande pour <repo_xxx> )
-wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/tout_terrain/workspaces_and_settings/<repo_xxx>.code-workspace -O <racine_ext>/<path_ext>/<repo_xxx>/<repo_xxx>.code-workspace
+wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/multisys/workspaces_and_settings/<repo_xxx>.code-workspace -O <racine_ext>/<path_ext>/<repo_xxx>/<repo_xxx>.code-workspace
 # Téléchargement des fichiers de configuration codium
-wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/tout_terrain/workspaces_and_settings/settings.json -O ~/scripts/settings.json
-wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/workspaces_and_settings/projects.json -O ~/scripts/projects.json
+wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/multisys/workspaces_and_settings/settings.json -O <racine_int>/dev/vscodium/.config/VSCodium/User/settings.json
+wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/multisys/workspaces_and_settings/projects.json -O <racine_int>/dev/vscodium/.config/VSCodium/User/projects.json
 # Téléchargement des fichiers de scripts
-wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/tout_terrain/scripts/launch_codium.sh -O ~/scripts/launch_codium.sh
+wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/multisys//scripts/launch_codium.sh -O <racine_int>/dev/vscodium/scripts/launch_codium.sh
 ```
-Avec votre éditeur préféré dans les fichiers récupérés sur **~/scripts/**, remplacer < racine_ext >, < path_ext > et < repo_xxx > par vos propres valeurs
+Avec votre éditeur préféré dans les fichiers récupérés sur **<racine_int>/dev/vscodium/scripts/** et **<racine_int>/dev/vscodium/.config/VSCodium/User**, remplacer < racine_int >,< racine_ext >, < path_ext > et < repo_xxx > par vos propres valeurs
 
 ```bash
 # Installation des fichiers de configuration
-mv ~/scripts/settings.json ~/.config/VSCodium/User/settings.json
-mv ~/scripts/projects.json ~/.config/VSCodium/User/projects.json
-chmod +x ~/scripts/launch_codium.sh
+chmod +x <racine_int>/dev/vscodium/scripts/launch_codium.sh
 ```
 ##### Mise à jour du gestionnaire d'application
 ###### GNOME
@@ -280,7 +312,7 @@ Mettre à jour le **~/.local/share/applications/codium.desktop** avec votre édi
 # ligne a modifier
 # Exec=/usr/share/codium/codium %F
 # devient
-Exec=/bin/bash -c "~/scripts/launch_codium.sh"
+Exec=/bin/bash -c "/shared/dev/vscodium/scripts/launch_codium.sh"
 # régénérer le cache
 update-desktop-database ~/.local/share/applications/
 ```
@@ -293,7 +325,31 @@ Vérifier qu'elle est bien montée et accessible
 Relance VSCodium
 Il doit démarre sur < racine_ext >/< path_ext >
 
+## 🏗️ L'espace de travail pour les systèmes additionnels
+, vérifier que le compte utilisateur a bien les droits sur <racine>/dev
+⚠️ Après l'installation de l'OS, vérifier que le compte utilisateur a bien les droits sur < racine >/dev et au disque externe. Le cas échéant corriger les droit d'accès du compte
+
+Si tout est bon : 
+- Installer VSCodium pour votre OS
+- Récupérer le .desktop général et l'installer dans le $HOME
+```bash
+cp /usr/share/applications/codium.desktop ~/.local/share/applications/
+```
+- Mettre à jour le **~/.local/share/applications/codium.desktop** avec votre éditeur préféré
+```bash
+# ligne a modifier
+# Exec=/usr/share/codium/codium %F
+# devient
+Exec=/bin/bash -c "/shared/dev/vscodium/scripts/launch_codium.sh"
+# régénérer le cache
+update-desktop-database ~/.local/share/applications/
+```
+
+
 ## 📌 Notes
+
+> ⚠️ **Extensions recommandées** : Voir [la liste commune](../README.md#-extensions-communes).
+> 
 ### Paramétrage et shortcut
 
 #### Général
@@ -414,7 +470,7 @@ Pour ajouter des **extensions spécifiques** à un projet, édite son fichier `.
 ### A propos de project manager
 #### Comment bascule d'un projet à un autre ?
 
-![alt text](/vscodium/assets/use_project_manager.png)
+![alt text](../assets/use_project_manager.png)
 
 1. Dans la side bar, choisit Project Manager
 2. Dans les favoris choisir le projet global (vscodium) ou le sous-projet que l'on veux utiliser 
@@ -422,7 +478,7 @@ Pour ajouter des **extensions spécifiques** à un projet, édite son fichier `.
 ## 🔍 P'tit Bonus : Script de Validation
 Pour vérifier que votre environnement est prêt, exécutez :
 ```bash
-wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/tout_terrain/scripts/validate_vscodium.sh
+wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/multisys/scripts/validate_vscodium.sh
 chmod +x validate_vscodium.sh
 ./validate_vscodium.sh "< Disque Externe >"
 ```

@@ -5,10 +5,12 @@ Ce dossier contient une proposition de solution que j'utilise et j'espère KISS 
 # Sommaire <!-- omit in toc -->
 
 1. [🤔 L'idée](#-lidée)
+1. [🔀 **Quel mode choisir ?**](#-quel-mode-choisir-)
+   1. [📋 **Prérequis communs**](#-prérequis-communs)
+   1. [🛠️ Extensions Communes](#️-extensions-communes)
 1. [🔧 Convention de nommage](#-convention-de-nommage)
 1. [🖼️ Vue d'ensemble](#️-vue-densemble)
    1. [📁  Structure de la partie externe.](#--structure-de-la-partie-externe)
-   1. [🛠️ Extensions Communes](#️-extensions-communes)
 1. [🚀 Prêt à vous lancer ?](#-prêt-à-vous-lancer-)
 1. [📌 Notes complémentaires](#-notes-complémentaires)
 
@@ -25,6 +27,33 @@ Cela passe par 3 axes :
 - Un support interne (le pc fourni ou je mais ce que je fais spécifiquement pour le client)
 
 Un outils logiciel de développement ici VSCode (officiel) ou codium (version libre sans télémétrie et flicage (fonctionne sous Wintruc et Linux))
+
+## 🔀 **Quel mode choisir ?**
+
+  Mode               | Utilisation                                                                 | Pour qui ?                     |
+ |--------------------|-----------------------------------------------------------------------------|--------------------------------|
+ | [`tout_terrain/`](./tout_terrain/README.md) | **Disque externe/clef USB** : Projets transportables (demo, partage).       | Nomades, consultants.          |
+ | [`multisys/`](./multisys/README.md)       | **Partition partagée** : PC multi-boot (Linux/Windows).                  | Développeurs multi-OS.        |
+
+### 📋 **Prérequis communs**
+- Git installé.
+- Accès au terminal.
+- Un PC (fixe ou portable).
+
+ Mode             | Prérequis  
+------------------|-------------------------------------------------------------------------------|
+  `tout_terrain`  | Disque externe/clef USB formatée Linux. 
+  `multisys`      | Partition partagée entre OS (ex: `/shared`) + **optionnel** : disque externe. 
+
+
+### 🛠️ Extensions Communes
+Toutes les configurations incluent ces extensions de base :
+- **:emojisense:** : Pour ajouter des icônes sympas dans les markdown (au moin ici)
+- **GitLens** : Superpouvoirs Git (historique, blame, etc.).
+- **macros** : permet de rajoute des macro a Codium
+- **Markdown All in One** : Édition avancée de Markdown.
+- **Project MAnager** : Basculer entre les workspaces en 1 clic.
+- **ShellCheck** : Vérification des scripts shell.
 
 ## 🔧 Convention de nommage
 Dans ce document j'emploierai **Codium** pour désigne une installation officielle ou libre de VSCode
@@ -63,16 +92,6 @@ Vous avez donc une configuration **hybride** pour VSCodium, optimisée pour :
         └── README.md           # Ce fichier
 ```
 
----
-
-### 🛠️ Extensions Communes
-Toutes les configurations incluent ces extensions de base :
-- **:emojisense:** : Pour ajouter des icônes sympas dans les markdown (au moin ici)
-- **GitLens** : Superpouvoirs Git (historique, blame, etc.).
-- **macros** : permet de rajoute des macro a Codium
-- **Markdown All in One** : Édition avancée de Markdown.
-- **Project MAnager** : Basculer entre les workspaces en 1 clic.
-- **ShellCheck** : Vérification des scripts shell.
 
 ---
 
@@ -92,11 +111,11 @@ Désolé, je n'ai que la version non automatisée à proposer pour le moment mai
 
 Ah ! j'oubliais, comme tout projet il évolue et avec le temps je me suis rendu compte que tout le monde n'avait pas des PC en veux-tu en voila. Je me suis demander s'il etait possible d'utiliser cette base pour un PC multi-système et que la < **racine_int** > soit partageable entre les différents systèmes installés.
 
-**La réposse est  : OUI**
+**La réponse est  : OUI**
 
 Vous trouverez : 
-- La documentation d'origine [**Tout Terrain**](/vscodium/tout_terrain/docs/vscodium_tout_terrain.md)
-- La documentation de l'alternative pour PC [**Multi Système**](/vscodium/multisys/docs/vscodium_multisys.md)
+- La documentation d'origine [**Tout Terrain**](./tout_terrain/README.md)
+- La documentation de l'alternative pour PC [**Multi Système**](./multisys/README.md)
   
 
 
@@ -107,7 +126,7 @@ Vous trouverez :
 - Pour ajouter des **extensions spécifiques** à un projet, édite son fichier `.code-workspace`.
 - Comment bascule d'un projet à un autre ?
 
-![alt text](/tools/vscodium/tout_terrain/docs/use_project_manager.png)
+![alt text](./assets/use_project_manager.png)
 
 1. Dans la side bar, choisit Project Manager
 2. Dans les favoris choisir le projet global (vscodium) ou le sous-projet que l'on veux utiliser 
