@@ -30,18 +30,22 @@ Un outils logiciel de développement ici VSCode (officiel) ou codium (version li
 
 ## 🔀 **Quel mode choisir ?**
 
-   Mode               | Utilisation                                                                 | Pour qui ?                     |
+  Mode               | Utilisation                                                                 | Pour qui ?                     |
  |--------------------|-----------------------------------------------------------------------------|--------------------------------|
  | [`tout_terrain/`](./tout_terrain/README.md) | **Disque externe/clef USB** : Projets transportables (demo, partage).       | Nomades, consultants.          |
- | [`multisys/`](./multisys/README.md)       | **Partition partagée** : PC multi-boot (Linux/Windows) + **Disque externe/clef USB** : Projets transportables (demo, partage).| Développeurs multi-OS. Nomades, consultants        |
+ | [`multisys/`](./multisys/README.md)       | **Partition partagée** : PC multi-boot (Linux/Windows).                  | Développeurs multi-OS.        |
 
 ### 📋 **Prérequis communs**
-- Un PC (fixe ou portable).
-- **Pour `tout_terrain`** : Un disque externe ou une clef USB formatée Linux.
-- **Pour `multisys`** : Une partition partagée entre vos OS (ex: `/shared`) + Un disque externe ou une clef USB formatée Linux.
 - Git installé.
 - Accès au terminal.
-  
+- Un PC (fixe ou portable).
+
+ Mode             | Prérequis  
+------------------|-------------------------------------------------------------------------------|
+  `tout_terrain`  | Disque externe/clef USB formatée Linux. 
+  `multisys`      | Partition partagée entre OS (ex: `/shared`) + **optionnel** : disque externe. 
+
+
 ### 🛠️ Extensions Communes
 Toutes les configurations incluent ces extensions de base :
 - **:emojisense:** : Pour ajouter des icônes sympas dans les markdown (au moin ici)
@@ -107,7 +111,7 @@ Désolé, je n'ai que la version non automatisée à proposer pour le moment mai
 
 Ah ! j'oubliais, comme tout projet il évolue et avec le temps je me suis rendu compte que tout le monde n'avait pas des PC en veux-tu en voila. Je me suis demander s'il etait possible d'utiliser cette base pour un PC multi-système et que la < **racine_int** > soit partageable entre les différents systèmes installés.
 
-**La réposse est  : OUI**
+**La réponse est  : OUI**
 
 Vous trouverez : 
 - La documentation d'origine [**Tout Terrain**](./tout_terrain/README.md)

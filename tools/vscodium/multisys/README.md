@@ -1,5 +1,5 @@
-# Installation VSCodium multi systeme
-1. [Installation VSCodium multi systeme](#installation-vscodium-multi-systeme)
+# Installation VSCodium multi-systeme
+1. [Installation VSCodium multi-systeme](#installation-vscodium-multi-systeme)
    1. [🤔 But](#-but)
    1. [🔧 Prérequis](#-prérequis)
    1. [👷 Installer VSCodium](#-installer-vscodium)
@@ -71,7 +71,7 @@ V8: 13.8.258.32-electron.0
 
 ## 🔧 Prérequis
 
-- 1 pc (portable ou fixe) avec 1 To de disque interne avec un point de montage partage entre els systèmes installés
+- 1 pc (portable ou fixe) avec 1 To de disque interne avec un point de montage partage entre les systèmes installés
 - 1 disque externe ou pourquoi pas un clef usb formatée pour Linux
 - et bien sûr sur chaque sytème installé
   - git installé
@@ -219,7 +219,7 @@ Ceci est la partie installation par défaut si le disque externe n'est pas prés
 ### ⚠️ Rappel pour mémoire
 
 - La <racine_int> est le point de montage de la partition de partage mis en place à l'installation du système, il apaprtient au compte **root**
-- Le premier dossier de <racine_int> DOIT appartenir au compte utilisateur, il importe donc de créer le même compte avec la même (UID / GID) sur tous els systèmes disponible 
+- Le premier dossier de <racine_int> DOIT appartenir au compte utilisateur, il importe donc de créer le même compte avec la même (UID / GID) sur tous les systèmes disponible 
 
 
 #### Initialisation
@@ -347,6 +347,9 @@ update-desktop-database ~/.local/share/applications/
 
 
 ## 📌 Notes
+
+> ⚠️ **Extensions recommandées** : Voir [la liste commune](../README.md#-extensions-communes).
+> 
 ### Paramétrage et shortcut
 
 #### Général

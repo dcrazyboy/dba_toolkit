@@ -294,6 +294,8 @@ Relance VSCodium
 Il doit démarre sur < racine_ext >/< path_ext >
 
 ## 📌 Notes
+
+> ⚠️ **Extensions recommandées** : Voir [la liste commune](../README.md#-extensions-communes).
 ### Paramétrage et shortcut
 
 #### Général
