@@ -29,7 +29,8 @@
          1. [Général](#général)
             1. [Paramétrage](#paramétrage)
             1. [Shortcut](#shortcut)
-         1. [Extension : Gitlens](#extension--gitlens)
+      
+   1. [Extension : Gitlens](#extension--gitlens)
             1. [Paramétrage](#paramétrage-1)
             1. [Shortcut](#shortcut-1)
          1. [Extension : Markdown All In One](#extension--markdown-all-in-one)
@@ -72,7 +73,8 @@ V8: 13.8.258.32-electron.0
 ## 🔧 Prérequis
 
 - 1 pc (portable ou fixe) avec 1 To de disque interne avec un point de montage partage entre les systèmes installés
-- 1 disque externe ou pourquoi pas un clef usb formatée pour Linux
+- 1 disque externe ou p
+ourquoi pas un clef usb formatée pour Linux
 - et bien sûr sur chaque sytème installé
   - git installé
   - accès au terminal
@@ -117,7 +119,8 @@ Charger le package de mise a jour du noyau Windows
 
 et l'executer
 
-Revenir sous powershel mode administrateur
+Revenir sous powershel
+ mode administrateur
 ```powershell
 # définir WSL 2 par défaut
 wsl.exe --set-default-version 2
@@ -159,8 +162,8 @@ ls /mnt/<disque windows>
 touch /mnt/c/Users/<user windows>/test_wsl.txt
 # vérifier que le fichier est bien visible et accessible depuis l'explorateur windows
 ```
-- ⚠️ Les fichiers situés dans /mnt/< disque >/ peuvent être plus lents que ceux dans le système de fichiers natif de WSL (~/).
-- ⚠️ Pour de meilleurs performances, stockez vos projets dans ~/projects/ et utilisez /mnt/< disque > uniquement pour les fichiers partagés avec Windows.
+- ⚠️ Les fichiers situés dans /mnt/< disque >/ peuvent être plus lents que ceux dans le système de fichiers natif de WSL ($HOME).
+- ⚠️ Pour de meilleurs performances, stockez vos projets dans $HOME/projects/ et utilisez /mnt/< disque > uniquement pour les fichiers partagés avec Windows.
 - L'installation finalisé, vous pouvez sauvegarder/restaurer votre distribution pour gagner un peu de place et libérer de la mémoire et de la CPU en utilisant Powershell
 ```Powershell
 # Sauvegarde
@@ -171,7 +174,8 @@ wsl --import Ubuntu-22.04 C:\wsl\ubuntu backup.tar
 
 #### Installation de Codium
 Il va y avoir une double installation à faire
-- dans le terminal WSL pour les outils, utiliser l'installation précédemment décrite en fonction de votre famille de distribution Linux
+- dans le terminal WSL pour les outils, utiliser l'installation précédemment décrite en fonction de v
+otre famille de distribution Linux
 - Dans Windows pour l'interface: 
   - Si ce n'est pas deja fait, installer VSCodium depuis : https://vscodium.com/
   - Ouvris VSCodium et installer l'extension "Remote - WSL"
@@ -208,7 +212,8 @@ Ceci est la partie installation par défaut si le disque externe n'est pas prés
   |     |      ├── extensions      # Dossier d'installation des extensions
   |     |      ├── scripts         # Dossier d'installation du script de lancement
   |     |      └── .config         # Dossier de parametrage de VSCodium
-  |     |             ├── User     # Dossier d'installation des fichiers json privés
+  |     |             ├── User     # Dossi
+er d'installation des fichiers json privés
   |     |             ├── /.../
   |     |             └── /.../
   |     ├── /.../
@@ -253,7 +258,7 @@ chmod -R u+rwx,g+rx,o-rwx <path_ext>/
 
 #4) les dossier du disque partagé
 # se déplacer sur le $HOME
-cd ~
+cd $HOME
 # 4) Créer le dossier avec les droits
 sudo mkdir -p <racine_int>/dev
 sudo chown $USER:$USER <racine_int>/dev
@@ -268,7 +273,8 @@ ls -ld <racine_int>/dev
 mkdir -p <racine_int>/dev/vscodium
 mkdir -p <racine_int>/dev/vscodium/scripts
 mkdir -p <racine_int>/dev/vscodium/.config/VSCodium/User
-mkdir -p <racine_int>/dev/vscodium/extensions
+mkdir
+ -p <racine_int>/dev/vscodium/extensions
 
 ```
 
@@ -295,7 +301,8 @@ wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium
 # Téléchargement des fichiers de scripts
 wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/multisys//scripts/launch_codium.sh -O <racine_int>/dev/vscodium/scripts/launch_codium.sh
 ```
-Avec votre éditeur préféré dans les fichiers récupérés sur **<racine_int>/dev/vscodium/scripts/** et **<racine_int>/dev/vscodium/.config/VSCodium/User**, remplacer < racine_int >,< racine_ext >, < path_ext > et < repo_xxx > par vos propres valeurs
+Avec votre éditeur préféré dans les fichiers récupérés sur **<racine_int>/dev/vscodium/scripts/** et **<racine_int>/dev/vscodium/.config/VSCodium/User**, remplacer < raci
+ne_int >,< racine_ext >, < path_ext > et < repo_xxx > par vos propres valeurs
 
 ```bash
 # Installation des fichiers de configuration
@@ -305,25 +312,25 @@ chmod +x <racine_int>/dev/vscodium/scripts/launch_codium.sh
 ###### GNOME
 Récupérer le .desktop général et l'installer dans le $HOME
 ```bash
-cp /usr/share/applications/codium.desktop ~/.local/share/applications/
+cp /usr/share/applications/codium.desktop $HOME/.local/share/applications/
 ```
-Mettre à jour le **~/.local/share/applications/codium.desktop** avec votre éditeur préféré
+Mettre à jour le **$HOME/.local/share/applications/codium.desktop** avec votre éditeur préféré
 ```bash
 # ligne a modifier
 # Exec=/usr/share/codium/codium %F
 # devient
 Exec=/bin/bash -c "/shared/dev/vscodium/scripts/launch_codium.sh"
 # régénérer le cache
-update-desktop-database ~/.local/share/applications/
+update-desktop-database $HOME/.local/share/applications/
 ```
 #### Test
 DD ou clef USB retirée lancer VSCodium
-Il doit démarrer dan le dossier par défaut ~/default_codium
+Il doit démarrer dans le dossier par défaut $HOME/default_codium
 
 Branche le DD ou la clef USB
 Vérifier qu'elle est bien montée et accessible
 Relance VSCodium
-Il doit démarre sur < racine_ext >/< path_ext >
+Il doit démarrer sur < racine_ext >/< path_ext >
 
 ## 🏗️ L'espace de travail pour les systèmes additionnels
 , vérifier que le compte utilisateur a bien les droits sur <racine>/dev
@@ -333,16 +340,16 @@ Si tout est bon :
 - Installer VSCodium pour votre OS
 - Récupérer le .desktop général et l'installer dans le $HOME
 ```bash
-cp /usr/share/applications/codium.desktop ~/.local/share/applications/
+cp /usr/share/applications/codium.desktop $HOME/.local/share/applications/
 ```
-- Mettre à jour le **~/.local/share/applications/codium.desktop** avec votre éditeur préféré
+- Mettre à jour le **$HOME/.local/share/applications/codium.desktop** avec votre éditeur préféré
 ```bash
 # ligne a modifier
 # Exec=/usr/share/codium/codium %F
 # devient
 Exec=/bin/bash -c "/shared/dev/vscodium/scripts/launch_codium.sh"
 # régénérer le cache
-update-desktop-database ~/.local/share/applications/
+update-desktop-database $HOME/.local/share/applications/
 ```
 
 
@@ -356,7 +363,8 @@ update-desktop-database ~/.local/share/applications/
 ##### Paramétrage
 ```
   // Apparence
-  "workbench.colorTheme": "Default Dark+",
+  "workbench.colorTheme": "Default 
+Dark+",
   "workbench.iconTheme": "material-icon-theme",
   // Raccourcis personnalisés (à ajouter dans keybindings.json)
   "workbench.startupEditor": "newUntitledFile",
@@ -423,7 +431,8 @@ Paramétrage Gitlens
   "markdown.preview.fontFamily": "'Fira Code'",
   // Activation des fonctionnalités de base
   "markdown.extension.toc.levels": "1..6",
-  "markdown.extension.toc.orderedList": true,
+  "m
+arkdown.extension.toc.orderedList": true,
   // Formatage automatique
   "markdown.extension.orderedList.marker": "one",
   // Prévisualisation
@@ -478,7 +487,8 @@ Pour ajouter des **extensions spécifiques** à un projet, édite son fichier `.
 ## 🔍 P'tit Bonus : Script de Validation
 Pour vérifier que votre environnement est prêt, exécutez :
 ```bash
-wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/multisys/scripts/validate_vscodium.sh
+wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vsc
+odium/multisys/scripts/validate_vscodium.sh
 chmod +x validate_vscodium.sh
 ./validate_vscodium.sh "< Disque Externe >"
 ```
