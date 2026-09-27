@@ -280,9 +280,9 @@ Mettre à jour le **~/.local/share/applications/codium.desktop** avec votre édi
 # ligne a modifier
 # Exec=/usr/share/codium/codium %F
 # devient
-Exec=/bin/bash -c "~/scripts/launch_codium.sh"
+Exec=/bin/bash -c "$HOME/scripts/launch_codium.sh"
 # régénérer le cache
-update-desktop-database ~/.local/share/applications/
+update-desktop-database $HOME/.local/share/applications/
 ```
 #### Test
 DD ou clef USB retirée lancer VSCodium
