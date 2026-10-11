@@ -257,7 +257,7 @@ Récupérer sur github les fichiers scripts dans dba_toolkit/tool/vscodium/scrip
 wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/tout_terrain/workspaces_and_settings/<repo_xxx>.code-workspace -O <racine_ext>/<path_ext>/<repo_xxx>/<repo_xxx>.code-workspace
 # Téléchargement des fichiers de configuration codium
 wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/tout_terrain/workspaces_and_settings/settings.json -O ~/scripts/settings.json
-wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/workspaces_and_settings/projects.json -O ~/scripts/projects.json
+wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/tout_terrain/workspaces_and_settings/projects.json -O ~/scripts/projects.json
 # Téléchargement des fichiers de scripts
 wget https://raw.githubusercontent.com/dcrazyboy/dba_toolkit/main/tools/vscodium/tout_terrain/scripts/launch_codium.sh -O ~/scripts/launch_codium.sh
 ```
@@ -280,9 +280,9 @@ Mettre à jour le **~/.local/share/applications/codium.desktop** avec votre édi
 # ligne a modifier
 # Exec=/usr/share/codium/codium %F
 # devient
-Exec=/bin/bash -c "~/scripts/launch_codium.sh"
+Exec=/bin/bash -c "$HOME/scripts/launch_codium.sh"
 # régénérer le cache
-update-desktop-database ~/.local/share/applications/
+update-desktop-database $HOME/.local/share/applications/
 ```
 #### Test
 DD ou clef USB retirée lancer VSCodium
