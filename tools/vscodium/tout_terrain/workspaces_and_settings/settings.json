@@ -34,13 +34,15 @@
   "gitlens.codeLens.enabled": true,
   "gitlens.currentLine.enabled": true,
   "gitlens.hovers.currentLine.over": "line",
-  "gitlens.hovers.enabled": true,
+  "gitlens.hovers.enabled": false,
   // Markdown
   "markdown.preview.fontSize": 14,
   "markdown.preview.fontFamily": "'Fira Code'",
-  // Activation des fonctionnalités de base
-  "markdown.extension.toc.levels": "1..6",
-  "markdown.extension.toc.orderedList": true,
+    // Activation des fonctionnalités de base
+  "markdown.extension.toc.levels": "1..3",          // 3 niveau affiché
+  "markdown.extension.toc.slugifyMode": "github",   // ancres identiques à celles de GitHub (accents conservés)
+  "markdown.extension.toc.updateOnSave": true,       // le sommaire se met à jour à chaque sauvegarde
+  "markdown.extension.toc.orderedList": false,
   // Formatage automatique
   "markdown.extension.orderedList.marker": "one",
   // suppressiondes permalink ajoute dans le code afficher
